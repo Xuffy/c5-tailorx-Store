@@ -1,0 +1,237 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>排班管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/class.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative" style="display: none">当前位置：<span>排班管理</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main ut-font12">
+				<div class="merchant-cont ut-box">
+					<!--main s-->
+					<div class='claMan'>
+						<div class='row show-gridut-border'>
+							<!--未2*添加班次-->
+							<div class='col-md-8 col-xs-8'>
+								<div class='col-md-12 cla-row cla-title'>
+									<span class='cla-active cal-cursor'><a href='classV2.html'  class='cal-a cal-a-color'>班次设置</a></span>
+									<span class='cla-set cal-cursor'><a href='arrangeV2.html' class='cal-a'>排班设置</a></span>
+								</div>
+								<div class='col-md-12 cla-title'>
+									<div class='cal-classSet'>
+										<span class='cla-set'>班次设置</span>
+									</div>
+									<div class='cla-btnNew cal-newSet'>
+										<a href='javascript:;' class='cal-a new-shift ' id="addNew"><button type='button' class='btn btn-info cla-newClass cal-cursor'>新建班次</button></a>
+									</div>
+								</div>
+								<!--未添加班次-->
+								<div id='noinfo-out' class='col-md-12 ut-border cal-taCont no-add'>
+									<span> 亲，你暂未设置班次，请点击“新建班次”添加哟~！</span>
+								</div>
+								<!--再次添加班次-->
+								<div id='have-data' class='col-md-12 ut-border cal-againCont add-again ut-none'>
+								</div>
+							</div>
+							<!--帮助提示-->
+							<div class='col-md-4 col-xs-4 help-tips change'>
+								<div class='col-md-12 cal-right ut-border'>
+									<div class='col-md-12 cal-rightCont'>
+										<span class='glyphicon glyphicon-question-sign' aria-hidden='true'></span>
+										<span class='cla-set cla-set0'>帮助说明</span>
+									</div>
+									<div class='col-md-12 cal-ask'>
+										<div class='widget-content widget-contentLie'>
+											<p class='arrange-circleW'>
+												<p class='arrange-circle'>1</p>进行排班，请先设置班次，班次可同时设置多个；</p>
+										</div>
+										<div class='widget-content widget-contentLie'>
+											<p class='arrange-circleW'>
+												<p class='arrange-circle'>2</p>创建班次无法与已创建的班次同名，另外创建完成后，可支持再次修改；</p>
+										</div>
+										<div class='widget-content widget-contentLie'>
+											<p class='arrange-circleW widget-contentLie'>
+												<p class='arrange-circle'>3</p>开启排班，无法与已创建的排班相同；</p>
+										</div>
+										<div class='widget-content widget-contentLie'>
+											<p class='arrange-circleW'>
+												<p class='arrange-circle'>4</p>开启排班，无法同时开启有存在时间重复的排班；</p>
+										</div>
+										<div class='widget-content widget-contentLie widget-contentLie-last'>
+											<p class='arrange-circleW'>
+												<p class='arrange-circle'>5</p>如未进排班，则用户无法进行预约操作</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<!--新建班次-->
+
+							<!--编辑班次-->
+							<div class='col-md-4 col-xs-4 new change add-new ut-none' id='edit-new-add'>
+								<div class='col-md-12 addCal-right ut-border'>
+									<div class='col-md-12 cal-rightCont'>
+										<div class='addCalClose'><span class='glyphicon glyphicon-remove cur close-add' aria-hidden='true'></span></div>
+										<div class='addSub'><button type='button' class='btn btn-info cla-newClass edit-submit' id="submitBtn">提交</button></div>
+									</div>
+									<div class='col-md-12 cal-class-name'>
+										<!--<div class='cal-ask'>-->
+										<div class='addClass-name cla-set0'>班次名称：</div>
+										<div class='addClass-name addClass-input'>
+											<input type='text' placeholder='请输入' class='addCla-nameInput' />
+										</div>
+										<!--</div>-->
+									</div>
+									<div class='col-md-12 cal-class-name'>
+										<!--<div class='cal-ask cal-ask1'>-->
+										<div class='addClass-go ut-mar-b20'>
+											<div class='addClass-name add-go-time cla-set0'>上班时间：</div>
+											<div class='addClass-name addClass-input'>
+												<!-- <input type='text' placeholder='--:--' class='addCla-go-nameInput on-time' /> -->
+												<select class='on-time-hour'>
+													<option value='00'>00</option>
+													<option value='01'>01</option>
+													<option value='02'>02</option>
+													<option value='03'>03</option>
+													<option value='04'>04</option>
+													<option value='05'>05</option>
+													<option value='06'>06</option>
+													<option value='07'>07</option>
+													<option value='08'>08</option>
+													<option value='09'>09</option>
+													<option value='10'>10</option>
+													<option value='11'>11</option>
+													<option value='12'>12</option>
+													<option value='13'>13</option>
+													<option value='14'>14</option>
+													<option value='15'>15</option>
+													<option value='16'>16</option>
+													<option value='17'>17</option>
+													<option value='18'>18</option>
+													<option value='19'>19</option>
+													<option value='20'>20</option>
+													<option value='21'>21</option>
+													<option value='22'>22</option>
+													<option value='23'>23</option>
+												</select>
+												<span>:</span>
+												<select class='on-time-min'>
+													<option value='00'>00</option>
+													<option value='15'>15</option>
+													<option value='30'>30</option>
+													<option value='45'>45</option>
+												</select>
+											</div>
+										</div>
+										<div class='addClass-go'>
+											<div class='addClass-name add-go-time cla-set0'>下班时间：</div>
+											<div class='addClass-name addClass-input'>
+												<!-- <input type='text' placeholder='--:--' class='addCla-go-nameInput off-time' /> -->
+												<select class='off-time-hour'>
+													<option value='00'>00</option>
+													<option value='01'>01</option>
+													<option value='02'>02</option>
+													<option value='03'>03</option>
+													<option value='04'>04</option>
+													<option value='05'>05</option>
+													<option value='06'>06</option>
+													<option value='07'>07</option>
+													<option value='08'>08</option>
+													<option value='09'>09</option>
+													<option value='10'>10</option>
+													<option value='11'>11</option>
+													<option value='12'>12</option>
+													<option value='13'>13</option>
+													<option value='14'>14</option>
+													<option value='15'>15</option>
+													<option value='16'>16</option>
+													<option value='17'>17</option>
+													<option value='18'>18</option>
+													<option value='19'>19</option>
+													<option value='20'>20</option>
+													<option value='21'>21</option>
+													<option value='22'>22</option>
+													<option value='23'>23</option>
+												</select>
+												<span>:</span>
+												<select class='off-time-min'>
+													<option value='00'>00</option>
+													<option value='15'>15</option>
+													<option value='30'>30</option>
+													<option value='45'>45</option>
+												</select>
+											</div>
+										</div>
+
+									</div>
+									<div class='col-md-12 cal-class-name'>
+										<div class='cal-ask cla-set0'>设置中间休息时间段？</div>
+									</div>
+									<div class='col-md-12 cal-class-name ut-mar-l20 radio cal-lineheight rest-time-out'>
+										<label><input class='rest-time true' type='radio' name='rest-time' value="1"/>是</label>
+										<label><input class='rest-time false' type='radio' name='rest-time' value="0" checked/>否</label>
+									</div>
+
+									<!--btn-->
+									<a href='javascript:;' class='cal-a' id="cancel"><button type='button' class='btn btn-info cla-newClass cancel-edit ut-mar-t10 ut-mar-l10'>取消</button></a>
+									<a href='javascript:;' class='cal-a' id="continue"><button type='button' class='btn btn-info cla-newClass ut-mar-t10 ut-mar-l10'>继续添加</button></a>
+								</div>
+							</div>
+							<!--弹框错误提示-->
+							<div class='designer-deAdd ut-none'>
+								<div class='bounced-deAdd'>
+									<div>
+										<span class='glyphicon glyphicon-warning-sign againError' aria-hidden='true'></span>&nbsp;&nbsp;
+										<span>请填写完整信息再点提交</span>
+									</div>
+									<button class='btn btn-info arrangeAdd-btn1 add-continue'>继续填写</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="../../lib/jquery.pickmeup.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/class.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

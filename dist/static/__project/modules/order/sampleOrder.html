@@ -1,0 +1,240 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>样衣单管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative" style="display: none">当前位置：<span>样衣单管理</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font14">
+					<!--main s-->
+					<div class="ut-border-dashed ut-bk-g">
+						<form class="ut-pad-10" id="formTable">
+							<div class="ut-pad-t5 ut-pad-b5">
+								<div class="ut-inline-block">
+									关&ensp;键&ensp;字：<input type="text" class="ut-input w-500 ut-mar-l5 keyword" placeholder="请输入订单编号/用户昵称/设计师姓名/标签进行搜索" />
+								</div>
+								<!--<div class="ut-inline-block ut-mar-l20">
+									订单级别：
+									<select name="sex" class="ut-input w-120" id="order-grade">
+										<option value="">全部</option>
+										<option value="A">A</option>
+										<option value="B">B</option>
+										<option value="C">C</option>
+										<option value="D">D</option>
+									</select>
+
+								</div>-->
+							</div>
+							<div class="ut-pad-t5 ut-pad-b5">
+								系统标签：
+								<select name="sex" class="ut-input w-120" id="sex-select">
+									<option value="">全部性别</option>
+								</select>
+								<select name="" class="ut-input w-120" id="second-select">
+									<option value="">全部款式</option>
+								</select>
+								<select name="class" class="ut-input w-120" id="third-select">
+									<option value="">全部季节</option>
+
+								</select>
+								<span class="ut-mar-l20">处理状态：</span>
+								<select name="class" class="ut-input w-120" id="handleStatu">
+									<option value="">请选择</option>
+									<option value="0">待处理</option>
+									<option value="1">-----</option>
+
+								</select>
+								<!--<span class="ut-mar-l20">流程节点：</span>
+								<select name="class" class="ut-input w-120" id="flowCode">
+									<option value="">全部</option>
+									<option value="1">订单生成</option>
+									<option value="2">预约到店</option>
+									<option value="3">生成工艺单</option>
+									<option value="4">工厂生产</option>
+									<option value="5">生产完成</option>
+								</select>-->
+
+							</div>
+							<div class="ut-pad-t5 ut-pad-b5">
+								<span>订单金额： </span><input type="text" class="ut-input w-120" id="minPrice" placeholder="最小值" onkeyup="clearNoNum(this)" />~
+								<input type="text" class="ut-input w-120" id="maxPrice" placeholder="最大值" onkeyup="clearNoNum(this)" />
+								<span class="ut-mar-l20">创建时间： </span><input type="text" id="startTime" class="ut-input w-120 laydate-icon" />~<input type="text" class="ut-input w-120 laydate-icon" id="endTime" />
+								<div class="ut-btn btn-1" onclick="sampleOrder.searchFunction()">搜索</div>
+								<input id="res" name="res" type="reset" class="ut-btn btn-6" />
+							</div>
+							<div class="ut-pad-t5 ut-pad-b5">
+								<div class="ut-btn btn-1" onclick="sampleOrder.addsampleFunction()">添加样衣单</div>
+							</div>
+						</form>
+					</div>
+					<!--table-->
+					<div class="ut-mar-t20 ut-pad-10 ut-border " id="tableCont">
+						<table class="table ut-font12 ut-text-center" id="tableContList">
+							<tr>
+								<th>订单编号</th>
+								<th>设计师</th>
+								<th>系统标签</th>
+								<th>标签</th>
+								<th>订单金额</th>
+								<th>订单级别</th>
+								<th>订单创建时间</th>
+								<th>处理状态</th>
+								<!--<th>流程节点</th>-->
+								<th>操作</th>
+							</tr>
+						</table>
+
+						<div class="ut-fr ut-mar-t20">
+							<div class="M-box" class="ut-fr" id="templatePage"></div>
+						</div>
+					</div>
+					<div class="ut-mar-t20 ut-inline-block">共<span id="totalSize" class="ut-color-e"></span>个订单</div>
+					<div id="pageNumList" class="ut-inline-block">
+						<span class="ut-mar-l20">页数：</span>
+						<select name="class" class="ut-input w-120" id="pageNum">
+							<option value="10">10条</option>
+							<option value="20">20条</option>
+							<option value="30">30条</option>
+							<option value="40">40条</option>
+							<option value="50">50条</option>
+						</select>
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+		<!--//分配弹框-->
+		<!--<div class="ut-layer ut-none" id="orderAll">
+			<div class="ut-layer-cont orderEdit-orderAll ut-font12">
+				<div class="orderAll-title  ut-relative">
+					<div class="title-left">分配订单</div>
+					<i class="fa fa-close title-i ut-pointer" onclick="order.closeFunction()"></i>
+				</div>
+
+				<div style="max-height: 90%;overflow-y: auto;">
+					<div class="materialSelect-center">
+						<div class="ut-mar-t10">
+							<div class="orderAll-inline">订单编号：<span id="orderAllNo">DD585854658 </span></div>
+							<div class="orderAll-inline">下单时间：<span id="orderAllTime">2017.06.12  10：11 </span></div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="orderAll-inline">用户名称：<span id="orderAllName">DD585854658 </span></div>
+							<div class="orderAll-inline">手机号码：<span id="orderAllPhone">2017.06.12  10：11 </span></div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="orderAll-need-title">需求内容：</div>
+							<div class="orderAll-need-cont" id="orderAll-need-description">客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容客户需求内容内容内容</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="orderAll-need-title">参考图片：</div>
+							<div class="orderAll-need-cont" id="orderAll-need-picture">
+								<div class="ut-inline-block orderAll-need-msg">
+									<img src="../../img/zhanwei.jpg" alt="" />
+								</div>
+								<div class="ut-inline-block orderAll-need-msg">
+									<img src="../../img/zhanwei.jpg" alt="" />
+								</div>
+								<div class="ut-inline-block orderAll-need-msg">
+									<img src="../../img/zhanwei.jpg" alt="" />
+								</div>
+							</div>
+						</div>
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver">性&ensp;&ensp;&ensp;&ensp;别：
+							</div>
+							<div class='ut-inline-block wb-80' id="picSex-str">
+							</div>
+						</div>
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver">款&ensp;&ensp;&ensp;&ensp;式：</div>
+							<div class='ut-inline-block wb-80' id="picStyle-str">
+							</div>
+						</div>
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver">季&ensp;&ensp;&ensp;&ensp;节：</div>
+							<div class="ut-inline-block wb-80" id="picSeason-str">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">添加标签：</div>
+							<input type="text" placeholder="创建标签" class="ut-font12 ut-input ut-mar-l5 ut-mar-t5" id="addTableInput" />
+							<div class="ut-btn btn-1 ut-mar-l10 ut-mar-t5" id="addTableBtn">添加</div>
+							<div id="picTab-search">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">已选标签：</div>
+							<div id="picTab-Add" class="ut-inline-block ut-mar-l5 tableLabel">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">推荐标签：</div>
+							<div id="picTab-recommend" class="ut-inline-block ut-mar-l5 wb-80">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">添加备注：</div>
+							<div class="ut-inline-block ut-mar-l5 wb-80 ut-pad-t10">
+								<textarea id="orderAll-remark"></textarea>
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							分配设计师：
+							<input type="text" class="ut-input" id="searchDesigner" />
+							<ul class="designer-photo" id="designerList">
+								<li class="checked">
+									<div class="img-box orderAllPhoto">
+										<img id="edit-designerPhoto" src="" alt="">
+									</div>
+									<p id="edit-designerName"></p>
+								</li>
+							</ul>
+						</div>
+						<div class="orderAll-btn">
+							<div class="ut-btn btn-1 ut-mar-t20 w-120" id="orderAllEdit">确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>-->
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="js/sampleOrder.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

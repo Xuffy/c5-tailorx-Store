@@ -1,0 +1,323 @@
+
+.ut-relative{
+	position:relative;
+}
+#designer{
+    font-size: 12px;
+}
+#designer a{
+    color: black;
+}
+.title-nav a{
+	    color: #3c3c3c;
+}
+input[type=file].ut-none{
+    display: none;
+}
+label{
+    margin-bottom: 0;
+    font-weight: inherit;
+}
+.cur{
+    cursor: pointer;
+}
+.text-center{
+	text-align:center;
+}
+#designer .designer-table a{
+    color: #657BFC;
+}
+#designer a:hover{
+    color: #657BFC;
+}
+#designer .ut-border-dashed{
+    background-color: #EBEBEB;
+}
+#designer .btn-5{
+    background-color: white;
+}
+#designer .money-input{
+    width: 60px;
+}
+#designer .designer-table{
+    width: 100%;
+    text-align: center;
+}
+#designer .designer-table tbody td{
+    border-top: 1px solid #BBBBBB;
+}
+#designer .designer-table tr{
+    line-height: 50px;
+}
+#designer .designer-table tbody tr{
+    line-height: 25px;
+}
+#designer .dd-t-image{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 5px auto;
+}
+#designer .dd-t-image img{
+    width: 100%;
+    height: 100%;
+}
+/*弹窗样式*/
+.store-content{
+    position: static;
+}
+#designer .layer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+#designer .layer-outer{
+    position: absolute;
+    top: 50%;
+    margin: -180px 0 0 -250px;
+    left: 50%;
+}
+#designer .layer-detail{
+    margin: 0 auto;
+    width: 550px;
+    height: 360px;
+    background-color: white;
+}
+#designer .layer-logo{
+    background-color: #666666;
+    height: 100%;
+    text-align: center;
+}
+#designer .logo-picture{
+    width: 105px;
+    height: 105px;
+    margin: 100px auto 20px auto;
+}
+#designer .logo-text{
+    color: #A9D5EB;
+    margin: 20px;
+}
+#designer .password-title{
+    border-bottom: 3px solid black;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+#designer .password-input{
+    padding-left: 20px;
+    padding-top: 25px;
+}
+#designer .password-input span{
+    position: relative;
+    top: 5px;
+}
+#designer .input-border{
+    border-bottom: 1px solid #BBBBBB;
+    width: 90%;
+}
+#designer .input-border input{
+    border: none;
+    outline: none;
+    padding-bottom: 5px;
+}
+#designer .btn-group-outer{
+	margin:30px auto;
+}
+#designer .submit-password{
+    width: 65px;
+}
+/*编辑设计师页面*/
+#designer-edit .breadcrumb{
+    border-bottom: 1px solid #BBBBBB;
+    border-radius: 0;
+    background-color: transparent;
+}
+#designer-edit .ut-body.edit{
+    border-top: 1px solid #BBBBBB;
+    border-bottom: 1px dotted #BBBBBB;
+    padding: 0;
+    position: relative;
+    font-size: 12px;
+}
+#designer-edit .border-r{
+    border-right: 1px solid #BBBBBB;
+}
+#designer-edit .designer-portrait{
+    width: 170px;
+    height: 170px;
+    margin: 20px 0;
+    position: relative;
+}
+#designer-edit .qr-code{
+    width: 85px;
+    height: 85px;
+    position: relative;
+    vertical-align: text-top;
+}
+#designer-edit .glyphicon-remove.cur{
+    vertical-align: bottom;
+}
+#designer-edit .portrait-upload{
+    position: absolute;
+    left:0px;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    color: white;
+}
+#designer-edit .glyphicon-trash{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+#designer-edit .qr-code .portrait-upload{
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    color: white;
+}
+#designer-edit .designer-portrait img,
+#designer-edit .qr-code img
+{
+    width: 100%;
+    height: 100%;
+}
+#designer-edit .left-designer{
+    width: 190px;
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+}
+#designer-edit .right-designer{
+    width: 190px;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+#designer-edit .designer-detail{
+    padding: 0 190px;
+}
+#designer-edit .designer-detail .border-r{
+    min-height: 450px;
+}
+#designer-edit .name-input,#designer-edit .grade-input{
+    width: 140px;
+}
+#designer-edit .QQ-input{
+    width: 118px;
+}
+#designer-edit .phone-input{
+    width: 112px;
+}
+#designer-edit .WeChat-input{
+    width: 124px;
+}
+#designer-edit .designer-detail .border-r{
+    padding: 10px;
+}
+#designer-edit .dd-textareae{
+    padding: 3px;
+    width: 100%;
+    height: 80px;
+    resize: none;
+}
+#designer-edit .dd-describe{
+    border-bottom: 1px solid #BBBBBB;
+    padding-bottom: 10px;
+}
+#designer-edit .designer-detail input{
+    width: 100%;
+}
+#designer-edit .sub-name{
+    color: #6E8992;
+}
+#designer-edit .right-designer .ut-input{
+    width: 80%;
+}
+#designer-edit{
+    position: relative;
+}
+#designer-edit .img-outer{
+    height: 180px;
+    width: 240px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #bbb;
+}
+#designer-edit img{
+    width: 100%;
+}
+#designer-edit .style-dd{
+    border-bottom: 1px solid #BBBBBB;
+    padding-bottom: 10px;
+}
+#designer-edit .ut-input.max{
+    width: 60%;
+}
+#designer-edit.designer-detail{
+    font-size: 12px;
+}
+#designer-edit .edit-tips{
+    position: relative;
+}
+#designer-edit .many-upload{
+    position: absolute;
+    right: 10px;
+    top:0;
+}
+#designer-edit .tip-upload{
+    width: 100%;
+    padding: 0 150px 0 70px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    top: 8px;
+}
+#designer a.active{
+    color: #4da146;
+}
+#designer .dd-t-image-out{
+	width:65px;
+	height:65px;
+	line-height:65px;
+	border-radius:50%;
+	overflow:hidden;
+	margin:5px auto;
+}
+#designer .dd-t-image-out img{
+	width:100%;
+	height: 100%;
+}
+#designer-edit .we_chat-input{
+	width:112px;
+}
+#designer-edit .des-upload{
+	width:100px;
+	height:50px;
+}
+#productions .upload{
+	height:30px;
+	width:100px;
+	left:70px;
+	bottom:10px;
+	position:absolute;
+	cursor:pointer;
+	font-size:0;
+	line-height:0;
+	opacity:0;
+	z-index:5;
+}

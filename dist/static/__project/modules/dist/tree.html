@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#tree-title {
+				position: absolute;
+				font-size: 12px;
+				font-weight: normal;
+				left: 65px;
+				top: 40px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<aside class="main-sidebar" id="index-loading" style="width: 180px;height:100%;">
+			<section class="sidebar" class="main-sidebar" style="width: 180px;height: 100%;">
+				<ul class="sidebar-menu ut-font12">
+					<li class="header ut-relative">
+						<div class="header-logo">
+							<img src="../../img/logo.png" alt="" />
+						</div>
+						<p class="ut-mar-l5">TailorX</p>
+						<p id="tree-title">商家管理系统</p>
+					</li>
+					<li class="treeview treeview-home ut-font12" id="treeview-home">
+						<a href="../../modules/homePage/homePage.html">
+							<span class="glyphicon glyphicon-home"></span>
+							<span>首&emsp;&emsp;页</span>
+						</a>
+					</li>
+					<li class="treeview treeview-systemSet" id="treeview-systemSet">
+						<a href="#">
+							<span class="glyphicon glyphicon-bookmark"></span>
+							<span>我的门店</span>
+							<i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li id="storeInfo">
+								<a href="../../modules/store/storeInfo.html">基本信息</a>
+							</li>
+							<li id="storeDecorate">
+								<a href="../../modules/store/storeDecorate.html">门店装饰</a>
+							</li>
+							<li>
+								<a href="../../modules/store/pictureManage.html">图库管理</a>
+							</li>
+
+						</ul>
+					</li>
+					<li class="treeview  treeview-merchant" id="treeview-merchant">
+						<a href="../../modules/new/new.html">
+							<i class="fa fa-laptop"></i>
+							<span>TailorX资讯</span>
+						</a>
+					</li>
+					<!--<li class="treeview treeview-check" id="treeview-check">
+						<a href="../../modules/outInfo/outInfo.html">
+							<span class="glyphicon glyphicon-paperclip"></span> <span>外网资讯</span>
+						</a>
+					</li>-->
+					<li class="treeview treeview-customer" id="treeview-customer">
+						<a href="../../modules/designer/designerV2.html">
+							<span class="glyphicon glyphicon-user"></span> <span>设计师管理</span>
+						</a>
+					</li>
+					<!--<li class="treeview treeview-order" id="treeview-order">
+						<a href="../../modules/order/order.html">
+							<span class="glyphicon glyphicon-time"></span> <span>订单管理</span>
+						</a>
+					</li>-->
+					<li class="treeview treeview-order" id="treeview-order">
+						<a href="#">
+							<span class="glyphicon glyphicon-time"></span>
+							<span>订单管理</span>
+							<i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li>
+								<a href="../../modules/order/order.html">客单管理</a>
+							</li>
+							<li>
+								<a href="../../modules/order/sampleOrder.html">样衣单管理</a>
+							</li>
+
+						</ul>
+					</li>
+					<li class="treeview treeview-workShow" id="treeview-workShow">
+						<a href="../../modules/order/worksShow.html">
+							<span class="glyphicon glyphicon-list-alt"></span> <span>作品管理</span>
+						</a>
+					</li>
+					<li class="treeview treeview-boke" id="treeview-boke">
+						<a href="../../modules/order/bokeShow.html">
+							<span class="glyphicon glyphicon-eye-open"></span> <span>版库管理</span>
+						</a>
+					</li>
+					<li class="treeview treeview-Arranging" id="treeview-Arranging">
+						<a href="../../modules/queue/queueV2.html">
+							<span class="fa fa-folder"></span> <span>排号管理</span>
+						</a>
+					</li>
+					<li class="treeview treeview-class" id="treeview-class">
+						<a href="../../modules/arrange/arrangeV2.html">
+							<span class="glyphicon glyphicon-th"></span> <span>排班管理</span>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</aside>
+
+		<!--修改密码弹窗-->
+		<div class="layer homepagePassword ut-none" id="layer-pass">
+			<div class="layer-outer1">
+				<div class="layer-detail row">
+					<div class="layer-logo">
+						<div class="logo-picture">
+							<img src="../../img/logo.png" alt="logo">
+						</div>
+						<div class="logo-text ut-font14 font-bold">
+							后台管理系统
+						</div>
+
+					</div>
+					<div class="layer-password">
+						<div class="password-title font-bold ut-font14">
+							修改密码
+						</div>
+						<div class="password-input">
+							<span class="fa fa-phone ut-font18"></span>
+							<div class="ut-inline-block input-border ut-font14">
+								<input type="text" placeholder="手机号" id="account-username" value="" disabled>
+							</div>
+						</div>
+						<div class="password-input">
+							<span class="fa fa-lock ut-font18"></span>
+							<div class="ut-inline-block input-border ut-font14">
+								<input type="password" placeholder="密码" id="oncePassWord">
+							</div>
+						</div>
+						<div class="password-input">
+							<span class="fa fa-tasks ut-font18"></span>
+							<div class="ut-inline-block input-border ut-font14">
+								<input type="password" placeholder="确认密码" id="secondPassWord">
+							</div>
+						</div>
+						<div class="password-input">
+							<span class="fa fa-envelope ut-font18"></span>
+							<div class="ut-inline-block input-border ut-font14">
+								<input type="text" placeholder="短信验证码" id="downCode">
+								<div class="ut-fr msg ut-border ut-radius6 getCode ut-pointer ut-font14" onclick="account.verificatio()">获取验证码</div>
+							</div>
+						</div>
+						<div class="ut-text-center ut-mar-t20">
+							<span class="ut-btn btn-3 submit-password ut-mar-r10 submit-btn" id="account-submit">确认修改</span>
+							<span class="ut-btn btn-3 submit-btn cancel-layer" id="cancel-layerBtn">取消</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../dist/sidebar-menu.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'));
+		if(sessionStorage.getItem("tailorx-sidebar-menu")) {
+			$('.' + sessionStorage.getItem("tailorx-sidebar-menu")).addClass('active');
+		}
+		if(localStorage.getItem('tailorx-store-user')) {
+			var user = JSON.parse(localStorage.getItem('tailorx-store-user'));
+			if(user.userType == 2){
+				$('#storeInfo').hide();
+				$('#storeDecorate').hide();
+			}else{
+				$('#storeInfo').show();
+				$('#storeDecorate').show();
+			}
+		}
+		$(function() {
+			$(".treeview").on("click", function() {
+				sessionStorage.setItem("tailorx-sidebar-menu", $(this).attr("id"));
+			});
+		});
+	</script>
+
+</html>

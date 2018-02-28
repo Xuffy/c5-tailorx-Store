@@ -1,0 +1,116 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>订单详情</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body class="orM">
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative title-nav">当前位置：
+				<a href="order.html">客单管理</a>&gt;
+				<a href="javascript:;" onclick="orderMeasurebody.comeBack()">客单详情</a>&gt;
+				<span class="ut-color-g">客户量体数据</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font14">
+					<!--main s-->
+					<div class="ut-title">
+						<div class="square"></div>
+						<div class="title-words">录入量体数据</div>
+					</div>
+					<!--量体数据-->
+					<div id="measureBody">
+						<div class="mes-cont">
+							<div class="mesTable-left">
+								<table class="ut-font12 num-body">
+								</table>
+							</div>
+							<div class="mesTable-right">
+								<table class="ut-font12" id="mesTable-top">
+									<tr>
+										<td><label><input type="checkbox" name="type1" value="0" disabled/>偏紧</label></td>
+										<td><label><input type="checkbox" name="type1" value="1" disabled/>居中</label></td>
+										<td><label><input type="checkbox" name="type1" value="2" disabled/>偏松</label></td>
+										<td><label><input type="checkbox" name="type2" value="0" disabled/>挺胸</label></td>
+										<td><label><input type="checkbox" name="type2" value="1" disabled/>平胸</label></td>
+									</tr>
+									<tr>
+										<td><label><input type="checkbox" name="type3" value="0" disabled/>斜肩</label></td>
+										<td><label><input type="checkbox" name="type3" value="1" disabled/>平肩</label></td>
+										<td><label><input type="checkbox" name="type3" value="2" disabled/>曲背</label></td>
+										<td><label><input type="checkbox" name="type4" value="0" disabled/>肚大</label></td>
+										<td><label><input type="checkbox" name="type4" value="1" disabled/>后围大</label></td>
+									</tr>
+									<tr>
+										<td colspan="5"><textarea class="type-text" readonly placeholder="请输入客户体型:比如腿长、正常..."></textarea></td>
+									</tr>
+								</table>
+								<div class="ut-mar-t20 mes-photo ut-pad-10">
+									<div>客户照片</div>
+									<div id="photo-msg">
+										<div class="img-outer ut-fl">
+											<img src="" alt="" class="photo-msg1">
+											<label class="portrait-upload">
+												<span class="ut-font18 ut-pad-l10"> 正面</span>
+											</label>
+										</div>
+										<div class="img-outer ut-fl">
+											<img src="" alt="" class="photo-msg2">
+											<label class="portrait-upload">
+												<span class="ut-font18 ut-pad-l10"> 侧面</span>
+											</label>
+										</div>
+										<div class="img-outer ut-fl">
+											<img src="" alt="" class="photo-msg3">
+											<label class="portrait-upload">
+												<span class="ut-font18 ut-pad-l10 "> 背面</span>
+											</label>
+										</div>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<!--</div>-->
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="js/orderMeasurebody.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

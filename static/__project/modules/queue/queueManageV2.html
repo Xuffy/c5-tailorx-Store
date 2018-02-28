@@ -1,0 +1,132 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>排号管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="../queue/css/queueManage.css">
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative queue-title">当前位置：
+				<a href="javascript:;" id="rowNumber">排号管理</a>
+				<span>&gt; 竞价状况</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box">
+					<!--main s-->
+					<div class="condition-box ut-pad-10 ut-border ut-font12">
+						<div class="ut-pad-10 ut-mar-t10">
+							<div class="ut-box">
+								<div class="ut-title">
+									<span class="square"></span>
+									<span class="title-words">订单基本信息</span>
+								</div>
+								<div class="ut-pad-10">
+									<table class="table info-table ut-border ut-font12">
+										<tr>
+											<td>定制订单编号：<span class="m-no"></span></td>
+											<td>提交时间：<span class="m-time"></span></td>
+											<td>设计师：<span class="m-design"></span></td>
+										</tr>
+										<tr>
+											<td>昵称：<span class="m-name"></span></td>
+											<td>订单名称：<span class="m-orderName"></span></td>
+											<td>当前排号：<span class="ut-color-e m-sortNo"></span></td>
+										</tr>
+										<tr>
+											<td>排号持有者：<span class="m-cName"></span></td>
+											<td colspan="2">品类：<span class="m-cdName"></span></td>
+										</tr>
+										<tr>
+											<td colspan="3">手机：<span class="m-phone"></span></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<div class="ut-pad-10 ut-mar-t10" id='pageTabLists'>
+							<div class="ut-box">
+
+								<div class="ut-title">
+									<span class="square"></span>
+									<span class="title-words">交易记录</span>
+								</div>
+								<div id='rankNumber' data-id="${rankNumber.rankId}">
+
+								</div>
+								<div class='no-msg text-center no-user' id="rankNumberText" style='margin-top: 100px;display:none'>暂无交易记录</div>
+								<!--分页-->
+								<div class="ut-fr ut-mar-t20">
+									<div class="M-box" class="ut-fr" id="templatePage"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<script id='pageTabList' class="pageTabList" type="text/html">
+						{{each rows as row i}}
+						<div class="ut-body ut-font12" id=''>
+							<div class="ut-mar-t10 ut-border ut-pad-10 ut-mar-b20">
+								<span class="color-r">排号订单编号：{{row.trade_no}}</span>
+								<span class="ut-fr">交易时间：{{row.tradeTime}}</span>
+								<div class="row ut-mar-t40">
+									<div class="col-xs-3 ut-text-center">
+										<p class="mark-name">出售方</p>
+										<div class="img-box photo">
+											<img src="{{!!row.salePhoto ? row.salePhoto : '/img/temp.png'}}" alt="">
+										</div>
+										<p class="ut-mar-t10">{{row.saleName}}</p>
+									</div>
+									<div class="col-xs-6 ut-text-center bar-box">
+										<p class="queue-status">{{row.stautsName}}</p>
+										<div class="status-bar"></div>
+										<p class="price">金额：{{row.amount}}</p>
+									</div>
+									<div class="col-xs-3 ut-text-center">
+										<p class="mark-name">购买方</p>
+										<div class="img-box photo">
+											<img src="{{row.buyPhoto ? row.buyPhoto : '/img/temp.png'}}" alt="">
+										</div>
+										<p class="ut-mar-t10">{{row.buyName}}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{/each}}
+					</script>
+
+					<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+					<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+					<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+					<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+					<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+					<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+					<script type="text/javascript" src="../../js/template.js" charset="utf-8"></script>
+					<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+					<script src="js/queue-manage.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

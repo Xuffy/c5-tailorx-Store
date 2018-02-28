@@ -1,0 +1,541 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>订单管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+
+	</head>
+
+	<body class="orderEdit">
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative title-nav">当前位置：
+				<a href="order.html">客单管理</a> &gt;
+				<span class="ut-color-g">客单详情</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font14">
+					<!--main s-->
+					<div class="ut-title">
+						<div class="square"></div>
+						<div class="title-words">基本信息</div>
+					</div>
+					<div class="order-title col-lg-12 col-md-12 col-xs-12">
+						<div class="order-msg ut-fl"><img src="../../img/logo.png" alt="" /></div>
+						<div class="order-info col-lg-10 col-md-10 col-xs-10 ut-font14">
+							<div class="ut-inline-block"><span>用户昵称：</span><span id='nikeName'></span></div>
+							<div class="ut-inline-block"><span>用户手机：</span><span id='customerPhone'></span></div>
+							<div class="ut-inline-block"><span>预约门店：</span> <span id='storeName'></span></div>
+							<div class="ut-inline-block"><span>预约设计师：</span> <span id='designerName'></span></div>
+							<div class="ut-inline-block"><span>定金金额： </span><span id='deposit'></span></div>
+							<div class="ut-inline-block"><span>物流方式： </span><span id='deliveryName'></span></div>
+							<div class="ut-inline-block logistics"><span>收货人姓名： </span><span id='consignee'></span></div>
+							<div class="ut-inline-block logistics"><span>收货人电话： </span><span id='consigneePhone'></span></div>
+							<div class="ut-inline-block logistics" id='sendAddress'><span>收货地址： </span><span id='consigneeAddress'></span></div>
+							<div class="ut-inline-block logistics"><span>物流公司： </span><span id='logisticsCompany'></span></div>
+							<div class="ut-inline-block logistics"><span>物流单号： </span><span id='logisticsNum'></span></div>
+							<div class="ut-inline-block"><span>订单编号：</span><span id='orderNo'></span></div>
+							<div class="ut-inline-block"><span>订单创建时间： </span><span id='createDateStr'></span></div>
+							<div class="ut-inline-block"><span>系统标签： </span><span id='orderName'></span></div>
+							<div class="ut-inline-block"><span>订单金额： </span><span id='totalAmount'></span></div>
+							<div class="ut-inline-block"><span>工单编号： </span><span id='taskOrderNo'></span></div>
+							<div class="ut-inline-block"><span>订单等级： </span><span id='orderGrade'></span></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div>
+						<span>快捷入口： </span>
+						<div class="ut-btn btn-5 fasterEn-info">资讯来源</div>
+						<div class="ut-btn btn-5 fasterEn-photo">参考图片</div>
+						<div class="ut-btn btn-5 fasterEn-body">客户量体数据</div>
+						<div class="ut-btn btn-5 fasterEn-menu">工艺单</div>
+						<div class="ut-btn btn-5 fasterEn-evaluate">客户评价</div>
+						<div class="ut-btn btn-5 fasterEn-logistics">物流信息</div>
+					</div>
+					<div class="ut-title ut-mar-t20">
+						<div class="square"></div>
+						<div class="title-words">处理进度</div>
+						<div class="schedule-bk">
+							<div class="schedule-bar"></div>
+							<div class="active-bar"></div>
+							<i class="fa fa-circle schedule-circle schedule-circle1 circle-active" data-id="1" onclick="orderEdit.clickOrderTask(this,1)"></i>
+							<i class="fa fa-circle schedule-circle schedule-circle2  " data-id="2" onclick="orderEdit.clickOrderTask(this,2)"></i>
+							<i class="fa fa-circle schedule-circle schedule-circle3 " data-id="3" onclick="orderEdit.clickOrderTask(this,3)"></i>
+							<i class="fa fa-circle schedule-circle schedule-circle4" data-id="4" onclick="orderEdit.clickOrderTask(this,4)"></i>
+							<i class="fa fa-circle schedule-circle schedule-circle5" data-id="5" onclick="orderEdit.clickOrderTask(this,5)"></i>
+
+							<span class="schedule-word schedule-word1">生成预约订单</span>
+							<span class="schedule-word schedule-word2">预约到店</span>
+							<span class="schedule-word schedule-word3">生成工艺单</span>
+							<span class="schedule-word schedule-word4">工厂生产</span>
+							<span class="schedule-word schedule-word5">生产完成</span>
+						</div>
+					</div>
+					<!--table-->
+					<div class="ut-mar-t20 ut-pad-10 ut-border" id="tableEdit">
+						<table class="table ut-font12">
+							<tbody id="tableContList">
+								<tr>
+									<th></th>
+									<th>操作类型</th>
+									<th>操作人</th>
+									<th>执行结果</th>
+									<th>操作时间</th>
+									<th>备注</th>
+									<th>操作</th>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+		<!--查看大图-->
+		<div class="dx-preview-box ut-none">
+			<i class="fa fa-close title-close ut-pointer ut-font18" onclick="orderEdit.previewClose()"></i>
+			<img id="dx-preview-msg" src="../../img/404bg.png" alt="" />
+		</div>
+		<!--弹窗-->
+		<!--取消预约-->
+		<div class="ut-layer ut-none" id="noArriveStore">
+			<div class="ut-layer-cont orderEdit-noArriveStore">
+				<div class="ap-title  ut-relative  ut-mar-b20"><span id="orderE-title">客户取消预约</span><i class="fa fa-close title-i ut-pointer ut-font18" onclick="orderEdit.closeFunction()"></i></div>
+				<div><textarea class="noArriveStore-textarea noArriveStore2-textarea" placeholder="此处填写备注"></textarea></div>
+				<div class="ut-btn btn-1 ut-mar-t20 w-120" onclick="orderEdit.customerNotToStoreAction()">确定</div>
+			</div>
+		</div>
+		<!--面料选择-->
+		<div class="ut-layer ut-none" id="materialSelect">
+			<div class="ut-layer-cont orderEdit-materialSelect">
+				<div class="ap-title  ut-relative  ut-mar-b20">
+					<div class="title-left">面料选择</div>
+					<i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i>
+				</div>
+
+				<div style="max-height: 700px;overflow-y: auto;">
+					<div class="materialSelect-center">
+						<div><span class="ut-color-e">*</span>定制数量： <input type="text" class="ut-input w-50" onkeyup="clearNoNum(this,1)" onchange="clearNoNum(this,1)" id="madeNumber" />
+							<select name="unit" class="ut-input">
+								<option value="">单位</option>
+								<option value="1">套</option>
+								<option value="0" selected="selected">件</option>
+							</select>
+						</div>
+						<div class="ut-mar-t10"><span class="ut-color-e">*</span>胚样试衣：
+							<label><input type="radio" name="num" value="1"/>是</label>
+							<label><input type="radio" name="num" value="0" checked="checked"/>否</label>
+						</div>
+						<div class="ut-mar-t10">&ensp;面&emsp;&emsp;料：
+							<div class="ut-inline-block uploadLing-div">
+								<input type="text" class="ut-input w-120 name1" placeholder="编号" />
+								<input type="text" class="ut-input w-120 name2" placeholder="色号" />
+								<input type="text" class="ut-input w-120 name3" placeholder="备注" />
+								<div class="ut-inline-block orE-img">
+									<p class="orE-p">上传面料</p>
+									<img class="name4" src="" alt="" />
+									<input type="file" class="orE-file" />
+									<i class="fa fa-times-circle orE-close" onclick="orderEdit.delorE(this)"></i>
+								</div>
+							</div>
+							<div class="ut-btn btn-4 addFabric">添加</div>
+						</div>
+						<div class="ut-mar-t10 uploadLing">&ensp;里&emsp;&emsp;料：
+							<div class="ut-inline-block  uploadLing-div2">
+								<input type="text" class="ut-input w-120 name1" placeholder="编号" />
+								<input type="text" class="ut-input w-120 name2" placeholder="色号" />
+								<input type="text" class="ut-input w-120 name3" placeholder="备注" />
+								<div class="ut-inline-block orE-img">
+									<p class="orE-p">上传里料</p>
+									<img class="name4" src="" alt="" />
+									<input type="file" class="orE-file" />
+									<i class="fa fa-times-circle orE-close" onclick="orderEdit.delorE(this)"></i>
+								</div>
+							</div>
+							<div class="ut-btn btn-4 addLining">添加</div>
+						</div>
+						<!--辅料-->
+						<div class="ut-mar-t10 uploadLing">&ensp;辅&emsp;&emsp;料：
+							<div class="ut-inline-block  uploadLing-div3">
+								<input type="text" class="ut-input w-120 name1" placeholder="名称" />
+								<input type="text" class="ut-input w-120 name2" placeholder="编号" />
+								<input type="text" class="ut-input w-120 name3" placeholder="备注" />
+								<div class="ut-inline-block orE-img">
+									<p class="orE-p">上传辅料</p>
+									<img class="name4" src="" alt="" />
+									<input type="file" class="orE-file" />
+									<i class="fa fa-times-circle orE-close" onclick="orderEdit.delorE(this)"></i>
+								</div>
+							</div>
+							<div class="ut-btn btn-4 ingreLining">添加</div>
+						</div>
+						<!--add st-->
+						<div class="ut-none" id="orEshow">
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver"><span class="ut-color-e">*</span>性&ensp;&ensp;&ensp;&ensp;别：
+							</div>
+							<div class='ut-inline-block wb-80' id="picSex-str">
+								<!--<div class="pic-border ut-mar-r5" >男士</div>
+								<div class="pic-border ut-mar-r5 picBorder-active" >女士</div>-->
+							</div>
+						</div>
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver"><span class="ut-color-e">*</span>款&ensp;&ensp;&ensp;&ensp;式：</div>
+							<div class='ut-inline-block wb-80' id="picStyle-str">
+							</div>
+						</div>
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver"><span class="ut-color-e">*</span>季&ensp;&ensp;&ensp;&ensp;节：</div>
+							<div class="ut-inline-block wb-80" id="picSeason-str">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">添加标签：</div>
+							<input type="text" placeholder="创建标签" class="ut-font12 ut-input ut-mar-l5 ut-mar-t5" id="addTableInput" />
+							<div class="ut-btn btn-1 ut-mar-l10 ut-mar-t5" id="addTableBtn">添加</div>
+							<div id="picTab-search">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">已选标签：</div>
+							<div id="picTab-Add" class="ut-inline-block ut-mar-l5 tableLabel">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">推荐标签：</div>
+							<div id="picTab-recommend" class="ut-inline-block ut-mar-l5 wb-80">
+							</div>
+						</div>
+						</div>
+						<!--add end-->
+						<!--<div class="ut-mar-t10">
+							&ensp;款&emsp;式：
+							<label><input type="radio" name="num1" value="0"/>秋冬款</label>
+							<label><input type="radio" name="num1" value="1" checked="checked"/>春夏款</label>
+						</div>-->
+						<div class="ut-mar-t10 picGrade">
+							<div class="ut-inline-block wb-ver"><span class="ut-color-e">*</span>订单级别：
+							</div>
+							<div class='ut-inline-block wb-80' id="picGrade-str">
+								<div class="pic-border ut-mar-r5" value="A">A</div>
+								<div class="pic-border ut-mar-r5" value="B">B</div>
+								<div class="pic-border ut-mar-r5" value="C">C</div>
+								<div class="pic-border ut-mar-r5" value="D">D</div>
+							</div>
+						</div>
+						<div class="ut-mar-t10"><span class="ut-color-e">*</span>订单价格： <input type="text" class="ut-input" onkeyup="clearNoNum(this)" onchange="clearNoNum(this)" id="orderPrice" /></div>
+					</div>
+					<div class="ut-btn btn-1 ut-mar-t20 w-120" id="materialSelectCon">确定</div>
+				</div>
+			</div>
+		</div>
+		<!--验收通过-->
+		<div class="ut-layer ut-none" id="checkAccept">
+			<div class="ut-layer-cont orderEdit-checkAcceptStore">
+				<div class="ap-title  ut-relative  ut-mar-b20"><span>确认验收通过</span><i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i></div>
+				<div><textarea class="noArriveStore-textarea passTextarea" placeholder="此处填写备注"></textarea></div>
+				<div class='ut-mar-t20 ut-mar-l20 checkAccept-textLeft'>
+					<div class="many-upload ut-btn btn-1 ut-relative">
+						<label for="multUpload"><span class="glyphicon glyphicon-cloud-upload"></span>上传</label>
+						<input type="file" class="checkAccept-upload ut-none" multiple="multiple" id="passUpload">
+					</div>
+					<span class="ut-color-e ut-fr line-h27">数量限制：<span id="checkAcceptNum">0</span>/5</span>
+					<div class="checkAccept-photoList" id="checkAcceptList">
+					</div>
+				</div>
+				<div class="ut-mar-t10">
+					<div class="ut-btn btn-1 w-120 ut-mar-r20" id="checkAcceptSubmit">确定</div>
+					<div class="ut-btn btn-5 w-120 ut-mar-l20" onclick="orderEdit.closeFunction()">取消</div>
+				</div>
+
+				<!--<div class="ut-btn btn-1 ut-mar-t20 w-120" onclick="orderEdit.checkAcceptSubmit()">确定</div>-->
+			</div>
+		</div>
+		<!--验收不通过-->
+		<div class="ut-layer ut-none" id="checkrefuse">
+			<div class="ut-layer-cont orderEdit-checkAcceptStore">
+				<div class="ap-title  ut-relative  ut-mar-b20"><span>确认验收不通过</span><i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i></div>
+				<div style="text-align: left;margin:20px 0px 20px 30px;">
+				<!--	<input type="checkbox" name="sendFac" class="checkbox-sendFac" />&ensp;-->
+					是否需要工厂返工:&emsp;
+					<label class="ut-font14"><input type="radio" name="sendFac" class="checkbox-sendFac checkbox-sendFac-yes" data-id="1"/>是</label>
+					<label  class="ut-font14 ut-mar-l10"><input type="radio" name="sendFac" class="checkbox-sendFac checkbox-sendFac-no" data-id="0"/>否</label>
+				</div>
+				<!--<div style="text-align: left;margin:20px 0px 20px 30px;" class="orderSendFac ut-none">
+					是否需要编辑工单:&emsp;
+					<label class="ut-font14"><input type="radio" name="sendFac2" class="checkbox-sendFac checkbox-sendFac-yes" data-id="1"/>是</label>
+					<label  class="ut-font14 ut-mar-l10"><input type="radio" name="sendFac2" class="checkbox-sendFac checkbox-sendFac-no" data-id="0"/>否</label>
+				</div>-->
+				<div style="text-align: left;margin:20px 0px 20px 30px;" class="sendGoodFac">
+				<!--	<input type="checkbox" name="sendFac" class="checkbox-sendFac" />&ensp;-->
+					&ensp;&ensp;是否发货到工厂:&emsp;
+					<label class="ut-font14"><input type="radio" name="sendFac1" class="checkbox-sendFac checkbox-sendFac-yes1" data-id="1"/>是</label>
+					<label  class="ut-font14 ut-mar-l10"><input type="radio" name="sendFac1" class="checkbox-sendFac checkbox-sendFac-no1" data-id="0"/>否</label>
+				</div>
+				<div><textarea class="noArriveStore-textarea isPassTextarea" placeholder="此处填写备注"></textarea></div>
+				<div class='ut-mar-t20 ut-mar-l20 checkAccept-textLeft'>
+					<div class="many-upload ut-btn btn-1 ut-relative">
+						<label for="multUpload"><span class="glyphicon glyphicon-cloud-upload"></span>上传</label>
+						<input type="file" class="checkAccept-upload ut-none" multiple="multiple" id="ispassUpload">
+					</div>
+					<span class="ut-color-e ut-fr line-h27">数量限制：<span id="checkRefuseNum">0</span>/5</span>
+					<div class="checkAccept-photoList" id="checkRefuseList">
+					</div>
+				</div>
+				<div class="ut-mar-t10">
+					<div class="ut-btn btn-1 w-120 ut-mar-r20" id="isCheckSubmit">确定</div>
+					<div class="ut-btn btn-5 w-120 ut-mar-l20" onclick="orderEdit.closeFunction()">取消</div>
+				</div>
+
+				<!--<div class="ut-btn btn-1 ut-mar-t20 w-120" onclick="orderEdit.checkAcceptSubmit()">确定</div>-->
+			</div>
+		</div>
+
+		<!--商家发货给工厂-->
+		<div class="ut-layer ut-none" id="storeSendFactory">
+			<div class="ut-layer-cont orderEdit-sendGoodStore">
+				<div class="ap-title  ut-relative  ut-mar-b20"><span>门店发货到工厂</span><i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i></div>
+				<div class="sendGoods-div" id="sendGoodsOption2">
+					<select name="sendStyle" class="sendStyle2">
+						<option value="">请选择物流方式</option>
+						<option value="0">TX自物流</option>
+						<option value="1">第三方物流</option>
+					</select>
+				</div>
+				<div class="sendGoods-div select-style ut-none">
+					<select name="sendGoods-div" class='sendStyle-name2'>
+						<option value="0">请选择物流公司名称</option>
+						<option value="1"></option>
+					</select>
+				</div>
+				<div class="sendGoods-div select-style ut-none"><input type="text" class="sendGoods-input expressCompanyName2" placeholder="请填写物流单号" /></div>
+				<div class="sendGoods-div"><textarea class="sendGood-textarea" placeholder="此处填写备注"></textarea></div>
+				<div class='ut-mar-t20 ut-mar-l20 checkAccept-textLeft'>
+					<div class="many-upload ut-btn btn-1 ut-relative">
+						<label for="multUpload"><span class="glyphicon glyphicon-cloud-upload"></span>上传</label>
+						<input type="file" class="ut-none" multiple="multiple" id="sendGoods-upload">
+					</div>
+					<span class="ut-color-e ut-fr line-h27 upload-word ut-none">数量限制：<span id="sendGoodNum">0</span>/5</span>
+					<div class="checkAccept-photoList upload-word ut-none" id="checkAccept-sendGoodList">
+					</div>
+				</div>
+
+				<div class="ut-mar-t20">
+					<div class="ut-btn btn-1 ut-mar-t20 w-120" onclick="orderEdit.storeSendFactorySubmit()">确定</div>
+				</div>
+
+			</div>
+		</div>
+		<!--发送工厂-->
+		<div class="ut-layer ut-none" id="sendFactory">
+			<div class="ut-layer-cont orderEdit-noArriveStore">
+				<div class="ap-title  ut-relative  ut-mar-b20"><span>工艺单发送工厂</span><i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i></div>
+				<div><textarea class="noArriveStore-textarea noArriveStore1-textarea" placeholder="此处填写备注"></textarea></div>
+				<div class="ut-btn btn-1 ut-mar-t20 w-120" onclick="orderEdit.sendFactorySubmit()">确定</div>
+			</div>
+		</div>
+		<!--发货 给用户-->
+		<div class="ut-layer ut-none" id="sendGoods">
+			<div class="ut-layer-cont orderEdit-sendCus">
+				<div class="ap-title  ut-relative  ut-mar-b20"><span>门店发货到用户</span><i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i></div>
+				<div class="sendGoods-div" id="sendGoodsOption">
+					<select name="sendStyle" class="sendStyle1">
+						<option value="2">请选择物流方式</option>
+						<option value="0">第三方物流</option>
+						<option value="1">用户上门提货</option>
+					</select>
+
+				</div>
+
+				<div class="sendGoods-div select-style ut-none">
+					<select name="sendGoods-div" class='sendStyle-name sendStyle-name1'>
+						<option value="0">请选择物流公司名称</option>
+						<option value="1"></option>
+					</select>
+					<!--<input type="text" class="ut-input sendGoods-input" placeholder="请填写物流公司名称"/>-->
+				</div>
+				<div class="sendGoods-div select-style ut-none"><input type="text" class="ut-input sendGoods-input expressCompanyName1" placeholder="请填写物流单号" /></div>
+				<div id="sendName" class="ut-none">
+					<div>收货人姓名：<input type="text" class="ut-input sendName-name" /></div>
+					<div>收货人电话：<input type="text" class="ut-input sendName-phone" /></div>
+					<div class="form-inline">
+						<span>收货人地址：</span>
+							<div class="form-group form-group-witth">
+								<select class="form-control baseInfo" id="sheng" name="province" >
+	        						
+	        					</select>
+							</div>
+	        				<div class="form-group form-group-witth">
+								<select class="form-control baseInfo" id="shi" name="city" >
+	        						
+	        					</select>
+							</div>
+							<div class="form-group form-group-witth">
+								<select class="form-control baseInfo" id="xian" name="country" >
+	        						
+	        					</select>
+							</div>
+	        				<select id="xiang" name="street" id="street" class="form-control" style="display:none"></select>
+					</div>
+					<div>详细地址：<input type="text" class="ut-input" id="jiedao" /></div>
+				</div>
+				<div class="ut-btn btn-1 ut-mar-t40 w-120 expressNo" id="sendStyleSubmit">确定</div>
+			</div>
+		</div>
+		<!--资讯入口-->
+		<div class="ut-layer ut-none" id="infoEnter">
+			<div class="ut-layer-cont orderEdit-infoEnter">
+				<div class="ap-title  ut-relative  ut-mar-b20">
+					<div class="title-left">资讯来源</div>
+					<i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i>
+				</div>
+				<div style="max-height: 500px;overflow-y: auto;">
+					<div style="" class="pic-txt">
+						<p class="serial-title"></p>
+						<p class="serial-num ut-font12"></p>
+						<p class="serial-description ut-font14"></p>
+						<div class="pic_container">
+							<!--title—-p  and picture-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 快捷入口 客户上传图片-->
+		<div class="ut-layer ut-none" id="infoPhoto">
+			<div class="ut-relative  ut-mar-b20"><i class="fa fa-close title-close ut-pointer" onclick="orderEdit.closeFunction()"></i></div>
+			<!-- Swiper -->
+			<div class="swiper-container swiper-container-horizontal" style="width: 800px;">
+					<div class="swiper-slide  wrapper-bg-title" id="swiper-title">hi啊好机会的话就快点回家肯定会尽快尽快</div>
+				<div class="swiper-wrapper" id="swiper-picture">
+					<!--picture-->
+				</div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next buttonNext"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+				
+		</div>
+		<!--快捷入口 客户评价-->
+		<div class="ut-layer ut-none" id="customerEvaluate">
+			<div class="ut-layer-cont orderEdit-infoEnter ut-box ut-font14">
+				<div class="ap-title  ut-relative">
+					<div class="title-left">客户评价</div>
+					<i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i>
+				</div>
+				<div style="max-height: 500px;overflow-y: auto;">
+					<div class="ut-mar-t10">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">客户评分</div>
+						</div>
+						<div class="customerNum customerNum1">
+							<span>&emsp;综合评分</span>
+							<i class="fa fa-star cust-star1"></i>
+							<i class="fa fa-star cust-star2"></i>
+							<i class="fa fa-star cust-star3"></i>
+							<i class="fa fa-star cust-star4"></i>
+							<i class="fa fa-star cust-star5"></i>
+						</div>
+						<div class="customerNum customerNum2">
+							<span>设计师评分</span>
+							<i class="fa fa-star cust-star1"></i>
+							<i class="fa fa-star cust-star2"></i>
+							<i class="fa fa-star cust-star3"></i>
+							<i class="fa fa-star cust-star4"></i>
+							<i class="fa fa-star cust-star5"></i>
+						</div>
+						<div class="customerNum customerNum3">
+							<span>&emsp;工厂评分</span>
+							<i class="fa fa-star cust-star1"></i>
+							<i class="fa fa-star cust-star2"></i>
+							<i class="fa fa-star cust-star3"></i>
+							<i class="fa fa-star cust-star4"></i>
+							<i class="fa fa-star cust-star5"></i>
+						</div>
+					</div>
+					<div class="ut-mar-t10">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">客户评价</div>
+						</div>
+						<div class="curt-text">
+						</div>
+					</div>
+					<div class="ut-mar-t10">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">上传图片</div>
+						</div>
+						<div class="curt-photo">
+							<!--<div class="curt-photoOut">
+								<img src="../../img/404bg.png" alt="" />
+							</div>
+							<div class="curt-photoOut">
+								<img src="../../img/404bg.png" alt="" />
+							</div>
+							<div class="curt-photoOut">
+								<img src="../../img/404bg.png" alt="" />
+							</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--快捷入口 物流信息-->
+		<div class="ut-layer ut-none" id="detailLogistics">
+			<div class="ut-layer-cont orderEdit-infoEnter ut-box ut-font14">
+				<div class="ap-title  ut-relative">
+					<div class="title-left">物流信息</div>
+					<i class="fa fa-close title-i ut-pointer" onclick="orderEdit.closeFunction()"></i>
+				</div>
+				<div class="cust-logistics" style="max-height: 500px;overflow-y: auto;">
+					<table class="logistics-table ut-font12">
+						<!--物流信息-->
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="../../lib/GlobalProvinces_extend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/GlobalProvinces_main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/inItLocation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/orderEdit.js" type="text/javascript" charset="utf-8"></script>
+
+		<script>
+		</script>
+	</body>
+
+</html>

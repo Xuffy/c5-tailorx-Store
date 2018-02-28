@@ -1,0 +1,159 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>排班管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="../store/css/lanrenzhijia.css" />
+		<link rel="stylesheet" href="css/class.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative" style="display: none">当前位置：<span>排班管理</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+				
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box">
+					<!--main s-->
+					<div class='claMan'>
+						<div class='row show-gridut-border'>
+							<div class='col-md-8 col-xs-12 copy-parent'>
+								<div class='col-md-12 cla-row cla-title'>
+									<span class='cla-active cal-cursor'><a href='classV2.html' class='cal-a'>班次设置</a></span>
+									<span class='cla-set cal-cursor'><a href='arrangeV2.html'  class='cal-a cal-a-color'>排班设置</a></span>
+								</div>
+								<!--排班日期显示-->
+								<div class='col-md-12 ut-border arrange-taCont show-class-date'>
+									<div class='cla-btnNew cal-newSet'>
+										<button type='button' class='btn btn-info cla-newClass add-new-class'>新建排班</button>
+									</div>
+									<div class='arrange-set'>
+											<div class='class-content'>
+												<div class='arrange-menology'></div>
+												<div class='arrange-menologyWz'>
+													<p>已配置排班时间：<br><span id='open-arrange-time'></span></p>
+													<p>排班数量共计：<span id='arrangeNum'></span>个</p>
+													<p><span class='arrange-Wgreen'>已开启：<span id='openArrangeNum'></span>个</span>&emsp;
+													<br><span class='Wred'>未开启：<span id='closeArramgenum'></span></span>个</p>
+													<p class='arrange-Wblue ut-pointer'>查看已过期的排班</p>
+												</div>
+											</div>
+										</div>
+									<!--end-->
+								</div>
+								<!--未添加排班-->
+								<div class='col-md-12 ut-border cal-taCont no-add-class' id='no-data'>
+									<span> 亲，你暂未设置班次，请点击“新建班次”添加哟~！</span>
+								</div>
+								<!--已添加排班-->
+								<div class='col-md-12 ut-none ut-border has-add-class arrange-taCont over-bg' id='have-arrange-data'>
+									<p class="over-status">排班状态: <span class="ut-color-g" type="0">所有</span>&emsp;<span type="1">已开启</span>&emsp;<span type="2">未开启</span></p>
+									<div id="allArrange"></div>
+								</div>
+							</div>
+							<!--帮助说明-->
+							<div class='col-md-4 col-xs-12 help-tips'>
+								<div class='col-md-12 cal-right ut-border'>
+									<div class='col-md-12 cal-rightCont'>
+									<span class='glyphicon glyphicon-question-sign' aria-hidden='true'></span>
+									<span class='cla-set cla-set0'>帮助说明</span>
+								</div>
+								<div class='col-md-12 cal-ask'>
+									<div class='widget-content widget-contentLie'>
+										<p class='arrange-circleW'>
+											<p class='arrange-circle'>1</p>进行排班，请先设置班次，班次可同时设置多个；</p>
+									</div>
+									<div class='widget-content widget-contentLie'>
+										<p class='arrange-circleW'>
+											<p class='arrange-circle'>2</p>创建班次无法与已创建的班次同名，另外创建完成后，可支持再次修改；</p>
+									</div>
+									<div class='widget-content widget-contentLie'>
+										<p class='arrange-circleW widget-contentLie'>
+											<p class='arrange-circle'>3</p>开启排班，无法与已创建的排班相同；</p>
+									</div>
+									<div class='widget-content widget-contentLie'>
+										<p class='arrange-circleW'>
+											<p class='arrange-circle'>4</p>开启排班，无法同时开启有存在时间重复的排班；</p>
+									</div>
+									<div class='widget-content widget-contentLie widget-contentLie-last'>
+										<p class='arrange-circleW'>
+											<p class='arrange-circle'>5</p>如未进排班，则用户无法进行预约操作</p>
+									</div>
+								</div>
+								</div>
+								
+							</div>
+							<!--添加排班-->
+							<div class='arrange-ma-bg-outer ut-none add-arrange-outer'>
+								<div class='arrange-ma-bg ut-border add-arrange'>
+									<div class='addArrange-setName'>
+									<span class="fa fa-close fa-addArr-close"></span>
+										<button type='button' class='btn btn-info cla-newClass addArrangeSub add-submit'>提交</button>
+									</div>
+									<div>
+										<div class='addArrange-setName-shuru'>
+											<h5>排班名称：&nbsp</h5><input class='addArrange-setName-shuruName add' type='text' placeholder='请输入' /></div>
+										<div class='addArrange-setName-shuru'>
+											<h5>&emsp;&emsp;时间：</h5>
+											<input type="text" class="ut-input laydate-icon addArrange-setTimeS" id="start"
+										placeholder="开始时间">&emsp;-&emsp;
+										<input type="text" class="ut-input laydate-icon" id="end"
+										placeholder="结束时间">
+										</div>
+									</div>
+									<div class='col-md-12'>
+										<div class='bs-example ut-mar-t10' data-example-id='simple-table'>
+											<table class='table ut-border order-td' id="addNewTable">
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<!--添加排班编辑-->
+
+						</div>
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+		
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="../../lib/jquery.pickmeup.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/classArrange.js" type="text/javascript" charset="utf-8"></script>
+		
+
+
+	
+	</body>
+
+</html>

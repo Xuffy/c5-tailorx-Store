@@ -1,0 +1,200 @@
+.font-bold{
+    font-weight: bold;
+}
+#homepage .user-content{
+    padding: 5% 0 5% 5%;
+}
+#homepage .opening{
+    color: #11cd6e;
+    position: relative;
+    top: 12px;
+}
+#homepage .opening-img{
+    width: 45px;
+}
+#homepage .out-border{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #BBBBBB;
+    width: 100%;
+    margin-bottom: 50px;
+}
+#homepage .out-border>div{
+    padding: 1% 2%;
+}
+#homepage .out-border>div>div{
+    width: 55%;
+}
+#homepage .out-border>div>.text{
+    font-weight: bold;
+    font-size: 12px;
+    padding-top: 10px;
+    color: #607D8B;
+}
+#homepage .border-r{
+    border-right: 1px solid #BBBBBB;
+}
+#homepage .out-border>div>.img-outer{
+    text-align: right;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+#homepage .img-outer img{
+    width: 100%;
+    height: 100%;
+}
+#homepage .title{
+    border-left: 10px solid #D9D9D9;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+#homepage .chart{
+    padding: 10px;
+    width: 95%;
+    border-top: 1px solid #BBBBBB;
+}
+#homepage .showText{
+    padding-top: 50px;
+    width: 70%;
+}
+#homepage .showText table{
+    width: 100%;
+}
+#homepage .showText table td{
+    line-height: 40px;
+}
+#homepage .tip{
+    height: 20px;
+    width: 20px;
+}
+#homepage .orange{
+    background-color: #EE7523;
+    color: #fff;
+}
+#homepage .blue{
+    background-color: #69A0D8;
+    color: #fff;
+}
+#homepage .grey{
+    background-color: #9D9D9D;
+    color: #fff;
+}
+#homepage .orange-text{
+    color: #EE7523;
+}
+#homepage .blue-text{
+    color: #69A0D8;
+}
+#homepage .grey-text{
+    color: #9D9D9D;
+}
+#homepage .line-chart>div{
+    /*width: 50%;*/
+}
+/*紫色按钮*/
+#homepage .btn-6{
+    color:#fff;
+    background-color: #7E57C2;
+    border-color: #5E35B1;
+}
+#homepage .chart-outer .font-bold{
+    border-bottom: 1px solid #bbb;
+    line-height: 40px;
+}
+#homepage .ut-title{
+    border-bottom: 1px solid #bbb;
+}
+#homepage .portrait{
+    width: 65px;
+    height: 65px;
+    overflow:hidden;
+    border-radius: 50%;
+}
+#homepage .portrait img{
+    width: 100%;
+    height:100%;
+}
+/*弹窗样式*/
+#homepage .layer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+#homepage .layer-outer{
+    position: absolute;
+    top: 50%;
+    margin: -180px 0 0 -250px;
+    left: 50%;
+}
+#homepage .layer-detail{
+    margin: 0 auto;
+    width: 550px;
+    height: 360px;
+    background-color: white;
+}
+#homepage .layer-logo{
+    background-color: #666666;
+    height: 100%;
+    text-align: center;
+}
+#homepage .logo-picture{
+    width: 105px;
+    height: 105px;
+    margin: 100px auto 20px auto;
+}
+#homepage .logo-text{
+    color: #A9D5EB;
+    margin: 20px;
+}
+#homepage .password-title{
+    border-bottom: 3px solid black;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+#homepage .password-input{
+    padding-left: 20px;
+    padding-top: 25px;
+}
+#homepage .password-input span{
+    position: relative;
+    top: 5px;
+}
+#homepage .input-border{
+    border-bottom: 1px solid #BBBBBB;
+    width: 90%;
+}
+#homepage .input-border input{
+    border: none;
+    outline: none;
+    padding-bottom: 5px;
+}
+#homepage .password-input .msg{
+    padding: 0 5px;
+}
+#homepage .submit-password{
+    width: 150px;
+    margin: 35px 90px;
+}
+.store-content{
+    position: static;
+}
+#homepage a{
+    color: white;
+    text-decoration: none;
+}
+#homepage a.href-a{
+    color: black;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 991px) {
+    #homepage .border-r.no{
+        border-right: none;
+    }
+}

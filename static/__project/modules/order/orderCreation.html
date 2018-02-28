@@ -1,0 +1,427 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>订单详情</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative title-nav">当前位置：
+				<a href="order.html">客单管理</a>&gt;
+				<a href="javascript:;" onclick="orderCreation.comeBack()">客单详情</a>&gt;
+				<span class="ut-color-g">工艺单</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font14">
+					<!--main s-->
+					<div class="ut-title">
+						<div class="square"></div>
+						<div class="title-words">基本信息</div>
+					</div>
+					<div class="ut-mar-t20 ut-mar-b20 ut-mar-l20">
+						<span>定制数量：</span><span id="madeNumber"></span>
+						<span class="ut-mar-l20">胚样试衣：</span><span id="isFitting"></span>
+					</div>
+					<div class="ut-mar-t20">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">版式图</div>
+							<div class='ut-mar-t20 ut-mar-l20'>
+
+								<div class="many-upload ut-btn btn-1 ut-relative" id="bdUploadFormatBtn">
+									<span class="glyphicon glyphicon-cloud-upload"></span> 上传版式图
+									<!--<label for="multUpload"><span class="glyphicon glyphicon-cloud-upload"></span> 上传版式图</label>-->
+									<!--<input type="file" class="cadList-upload ut-none" id="cadUpload">-->
+								</div>
+								<span class="ut-color-e ut-fr line-h27">数量限制：<span id="cadNum">0</span>/5</span>
+								<div id="cadList" class="ut-relative ut-pad-10">
+									<!--<div class="cadList-div">
+											<span class="cadList-file">data.cad</span><i class="fa fa-times ut-pointer"></i> <i class="fa fa-download ut-pointer"></i>
+										</div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ut-mar-t20">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">设计稿及设计说明</div>
+							<div class='ut-mar-t20 ut-mar-l20'>
+
+								<div class="many-upload ut-btn btn-1 ut-relative">
+									<label for="multUpload"><span class="glyphicon glyphicon-cloud-upload"></span> 批量上传</label>
+									<input type="file" class="cadList-upload ut-none" multiple="multiple" id="multUpload">
+								</div>
+								<span class="ut-color-e ut-fr line-h27">数量限制：<span id="pictureNum">0</span>/20</span>
+							</div>
+						</div>
+
+						<div class="ut-mar-t20 ut-relative ut-mar-l20" id="imgOuter">
+							<div class="ut-fl" id="imgOuter-add" onclick="orderCreation.imgOuterAdd()"><i class="fa fa-plus ut-color-g ut-font16 ut-pointer"></i></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">设计师要求</div>
+						</div>
+					<div class="orderCreat-table">
+						<div class="des-text">
+							<textarea name="" rows="" cols="" id="designDescription"></textarea>
+
+						</div>
+					</div>
+
+					<div class="ut-mar-t20">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">客户量体数据</div>
+						</div>
+						<div class="mes-cont ut-mar-t20">
+							<div class="mesTableEdit-left">
+								<div class="mesTableName-title">设计尺寸表</div>
+								<table class="ut-font12 num-body">
+									<tr>
+										<td>上衣</td>
+										<td>成衣尺寸</td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketShoulderVolume">总长(肩顶量)</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketFront">前衣长</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketBack">后中长</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketBust">胸围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketAroundTheBelly">肚围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketWaistline">腰围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketHipline">臀围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketSweep">摆围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketShoulderWidth">肩宽</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<!--添加-->
+									<tr class="trName trNameNewAdd">
+										<td class="JacketShoulderSleeve">肩到袖</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketSleeveLeft">袖长 左</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									
+									<tr class="trName">
+										<td class="JacketSleeveRight">袖长 右</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<!--添加-->
+									<tr class="trName trNameNewAdd ">
+										<td class="JacketSleeveFat">袖肥</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<!--刪除-->
+									<tr class="trName trNameDisplay">
+										<td class="JacketBustTop">上胸围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketChestWidth">前胸宽</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketBackWidth">后背宽</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketCuff">袖口</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="JacketNeck">领围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<!--刪除-->
+									<tr class="trName trNameDisplay">
+										<td class="JacketNeckAndShoulder">(参考)肩颈-腹高点</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+								</table>
+							</div>
+							<div class="mesTableEdit-left">
+								<div class="mesTableName-title"></div>
+								<table class="ut-font12 num-body">
+									<tr>
+										<td>下衣/裙装</td>
+										<td>成衣尺寸</td>
+									</tr>
+									<!--添加-->
+									<tr class="trName trNameNewAdd">
+										<td class="DressPantsLong">裤/群长</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<!--添加-->
+									<tr class="trName trNameNewAdd">
+										<td class="DressWaistlineWidth">腰宽</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="DressWaistline">腰围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="DressHipline">臀围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="DressRise">直裆</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="DressTotalSize">总浪</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<!--tianjia--> 
+									<tr class="trName">
+										<td class="DressBigthigh" type="">大腿围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<!--删除-->
+									<tr class="trName trNameDisplay">
+										<td class="DressWithinLong">内长</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName trNameDisplay">
+										<td class="DressBarre">横裆</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="DressKneeCircumference">膝围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="DressCalfGirth">小腿围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName">
+										<td class="DressPants">裤口</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName trNameDisplay ">
+										<td class="DressBustTop">上胸围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName trNameDisplay ">
+										<td class="DressChestWidth">前胸宽</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName trNameDisplay ">
+										<td class="DressBackWidth">后背宽</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName trNameDisplay ">
+										<td class="DressCuff">袖口</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+									<tr class="trName trNameDisplay ">
+										<td class="DressNeck">领围</td>
+										<td><input type="text" value="" class="designerSize" /></td>
+									</tr>
+
+								</table>
+							</div>
+							<div class="mesTable-left">
+								<div class="mesTableName-title">顾客净寸表</div>
+								<table class="ut-font12 num-body" id="trueMes">
+								</table>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="ut-mar-t20">
+							<div class="ut-title">
+								<div class="square"></div>
+								<div class="title-words">客户照片</div>
+							</div>
+							<div class="ut-mar-t20">
+								<div class="img-outer ut-inline-block">
+									<div class="back-imgPlus"></div>
+									<img src="../../img/zhanwei.jpg" alt="" class="back-imgAdd-front">
+									<label class="portrait-upload">
+												<span class="glyphicon glyphicon-cloud-upload ut-font18 cur"></span>
+												<span class="ut-font18 ut-pad-l10 cur"> 正面</span>
+												<!--<span class="glyphicon glyphicon-trash ut-font18 cur" onclick="orderCreation.curPhoto(this)"></span>-->
+											</label>
+											<input type="file" class="upload">
+								</div>
+								<div class="img-outer ut-inline-block">
+									<div class="back-imgPlus"></div>
+									<img src="../../img/zhanwei.jpg" alt="" class="back-imgAdd-side">
+									<label class="portrait-upload">
+												<span class="glyphicon glyphicon-cloud-upload ut-font18 cur"></span>
+												<span class="ut-font18 ut-pad-l10 cur"> 侧面</span>
+												<!--<span class="glyphicon glyphicon-trash ut-font18 cur" onclick="orderCreation.curPhoto(this)"></span>-->
+											</label>
+											<input type="file" class="upload">
+								</div>
+								<div class="img-outer ut-inline-block">
+									<div class="back-imgPlus"></div>
+									<img src="../../img/zhanwei.jpg" alt="" class="back-imgAdd-back">
+									<label class="portrait-upload">
+												<span class="glyphicon glyphicon-cloud-upload ut-font18 cur"></span>
+												<span class="ut-font18 ut-pad-l10 cur"> 背面</span>
+												<!--<span class="glyphicon glyphicon-trash ut-font18 cur" onclick="orderCreation.curPhoto(this)"></span>-->
+											</label>
+											<input type="file" class="upload">
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">客户需求</div>
+						</div>
+						<div class="des-text">
+							<textarea class="customerRequest" placeholder="客户要求" readonly></textarea>
+						</div>
+						<div class="ut-mar-t20 orderMes-table">
+							<div class="ut-title">
+								<div class="square"></div>
+								<div class="title-words">面料信息</div>
+							</div>
+							<div class="ut-mar-t20">
+								<div class='ut-btn btn-1' id="addLine">添加</div>
+							</div>
+							<div class="ut-mar-t20">
+								<table id="tableLining">
+								</table>
+							</div>
+						</div>
+						<div class="ut-mar-t20">
+						<div class="ut-title">
+								<div class="square"></div>
+								<div class="title-words">里料信息</div>
+							</div>
+							<div class="ut-mar-t20">
+								<div class='ut-btn btn-1' id="addMera">添加</div>
+							</div>
+						<div class="ut-mar-t20 orderMes-table">
+							<table id="tableMaterial">
+							</table>
+						</div>
+							</div>
+						<!--//辅料信息-->
+						
+						<div class="ut-mar-t20">
+							<div class="ut-title">
+								<div class="square"></div>
+								<div class="title-words">辅料信息</div>
+							</div>
+							<div class="ut-mar-t20">
+								<div class='ut-btn btn-1' id="addAcce">添加</div>
+							</div>
+							<div class="ut-mar-t20 orderMes-table">
+							<table id="tableAccessory">
+							</table>
+						</div>
+						</div>
+
+					</div>
+					<div class="ut-btn btn-3 ut-mar-t20 ut-mar-r20 w-120" onclick="orderCreation.comeBack()">返回</div>
+					<div class="ut-btn btn-1 ut-mar-t20 ut-mar-r20 w-120" onclick="orderCreation.savaOrderClick()">保存</div>
+					<div class="ut-btn btn-4 ut-mar-t20 w-120" onclick="orderCreation.confirmOrderClick()">提交</div>
+				</div>
+				<!--main e-->
+			</div>
+		</div>
+		
+		</div>
+		
+		<!--上传版式图弹框-->
+		<div class="ut-layer ut-none" id="bdPopSize">
+			<div class="ut-layer-cont bdPopSize-infoEnter ut-box ut-font14">
+				<div class="ap-title  ut-relative">
+					<div class="title-left">选择尺码</div>
+					<i class="fa fa-close title-i ut-pointer" onclick="orderCreation.closeFunction()"></i>
+				</div>
+				<div class="ut-mar-t20 ut-mar-l10">
+					<div class="ut-inline-block ut-va-top">尺码：</div> 
+					<div class="ut-inline-block bdLabel">
+					<label ><input type="checkbox" name="size" value="10"/>XXS</label>
+					<label ><input type="checkbox" name="size" value="20"/>XS</label>
+					<label ><input type="checkbox" name="size" value="30"/>S</label>
+					<label ><input type="checkbox" name="size" value="40"/>M</label>
+					<label ><input type="checkbox" name="size" value="50"/>L</label>
+					<label ><input type="checkbox" name="size" value="60"/>XL</label>
+					<label ><input type="checkbox" name="size" value="70"/>XXL</label>
+					<label ><input type="checkbox" name="size" value="80"/>XXXL</label>
+					<label ><input type="checkbox" name="size" value="90"/>均码</label>
+					</div>
+				</div>
+				<div class="ut-mar-t20 ut-mar-l10" id="cadListPop">
+					<div class="ut-inline-block ut-va-top">文件：</div> 
+					<div class="ut-inline-block ut-relative">
+						<div class="ut-inline-block" id="clickOcrea">点击上传</div>
+						<input type="file" class="cadList-upload ut-none" id="cadUpload" placeholder="点击上传">
+					</div>
+				</div>
+				<!--<div class="picBtn"><div class="ut-btn btn-1" id="orderCrePopBtn">确定</div></div>-->
+				<!--<div class="ut-btn btn-1">确定</div>-->
+			</div>
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="js/orderCreation.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

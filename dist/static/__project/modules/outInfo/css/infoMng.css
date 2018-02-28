@@ -1,0 +1,22 @@
+.title-mng{
+	font-weight: bold;
+	font-size: 14px;
+}
+.infoMsg{
+	width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+.infoMsg img{
+	width: 100%;
+	height: auto;
+}
+.w-74{
+	width:74px;
+}
+.w-120{
+	width: 120px;
+}
+.span-middle input,.span-middle span{
+	vertical-align: middle;
+}

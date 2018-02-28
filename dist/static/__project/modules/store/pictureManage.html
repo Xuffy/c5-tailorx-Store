@@ -1,0 +1,182 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>图库管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" type="text/css" href="css/store.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative queue-title">当前位置：
+				<span>图库管理</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box">
+					<div id="publishStyle">
+						<div class="ut-inline-block ut-mar-r20 pic-active publishStyle-no ut-pointer">未发布</div>
+						<div class="ut-inline-block publishStyle-yes ut-pointer">已发布</div>
+					</div>
+					<div id="picNo-issue">
+						<form class="ut-pad-10" id="formTable">
+						<div class="ut-border-dashed condition-box ut-mar-t20">
+							<div class="ut-inline-block">
+								<div class="ut-inline-block designer2">
+									<div class='ut-inline-block'>设计师:&ensp;<input type="text" class="ut-input ut-mar-r5 pic-w150" id="noDesignerTerm" /></div>
+								</div>
+								<div class="ut-inline-block ut-mar-l20">
+									<div class='ut-inline-block'>关键字:&ensp;<input type="text" class="ut-input ut-mar-r5 pic-w150" id="noKey"></div>
+								</div>
+							</div>
+							<div class="ut-inline-block">
+								&emsp;分配时间：
+								<div class="ut-inline-block">
+									<input type="text" class="ut-input laydate-icon" id="startTime"> ---
+									<input type="text" class="ut-input laydate-icon" id="endTime">
+									<div class="ut-btn btn-1" id="noSearch">查询</div>
+									<input id="res" name="res" type="reset" class="ut-btn btn-6" />
+								</div>
+							</div>
+						</div>
+						</form>
+						<div id="noPicList">
+						</div>
+						<!--分页-->
+						<div class="ut-fr ut-mar-t20">
+							<div class="M-box" class="ut-fr" id="templatePage"></div>
+						</div>
+					</div>
+					<!--已发布-->
+					<div id="picOut-issue" class="ut-none">
+						<form class="ut-pad-10" id="formTable1">
+						<div class="ut-border-dashed condition-box ut-mar-t20">
+							<div class="ut-inline-block">
+								<div class="ut-inline-block designer2">
+									<div class='ut-inline-block'>设计师:&ensp;<input type="text" class="ut-input pic-w150" id="outDesignerTerm" /></div>
+								</div>
+								<div class="ut-inline-block ut-mar-l20">
+									<div class='ut-inline-block'>关键字:&ensp;<input type="text" class="ut-input ut-mar-r5 pic-w150" id="outKey"></div>
+								</div>
+							</div>
+							<div class="ut-inline-block">
+								&emsp;发布时间：
+								<div class="ut-inline-block">
+									<input type="text" class="ut-input laydate-icon" id="start"> ---
+									<input type="text" class="ut-input laydate-icon" id="end">
+									<div class="ut-btn btn-1" id="outSearch">查询</div>
+									<input id="res1" name="res" type="reset" class="ut-btn btn-6" />
+								</div>
+							</div>
+						</div>
+						</form>
+						<div id="outPicList">
+						</div>
+						<!--分页-->
+						<div class="ut-fr ut-mar-t20">
+							<div class="M-box" class="ut-fr" id="templatePage2"></div>
+						</div>
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+		<!--弹框-->
+		<!--查看大图-->
+		<div class="dx-preview-box ut-none">
+			<i class="fa fa-close title-close ut-pointer ut-font18" onclick="pictureManage.previewClose()"></i>
+			<img id="dx-preview-msg" src="../../img/404bg.png" alt="" />
+		</div>
+		<div class="ut-layer ut-none" id="picNo-editPhoto">
+			<div class="ut-layer-cont orderEdit-noArriveStore">
+				<div class="ap-title  ut-relative  ut-mar-b20 pic-title"><span id="orderE-title">编辑图片</span><i class="fa fa-close title-i ut-pointer ut-font18" onclick="pictureManage.closeFunction()"></i></div>
+				<div style="max-height: 650px;overflow-y: auto;">
+					<div class="picStyle-edit">
+						<div>
+							<div class="ut-inline-block picStyle-word">款式图片：</div>
+							<div class="picStyle-photo ut-relative">
+								<img src="../../img/404bg.png" alt="" id="picEdit-coverpic"/>
+								<input type="file" class="msgUpload"/>
+							</div>
+						</div>
+						<div class="ut-mar-t10">&ensp;&ensp;设计师：<span id="picEdit-desName">哈哈</span></div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block picStyle-word">&ensp;&ensp;&ensp;&ensp;描述：</div>
+							<textarea class="picEdit-desition ut-font12" placeholder="请输入140字以内描述"></textarea>
+						</div>
+						<div class="ut-mar-t10 picSex">&ensp;&ensp;&ensp;&ensp;
+							<div class="ut-inline-block wb-ver"><span class="ut-color-e">*</span>性别：
+							</div>
+							<div class='ut-inline-block wb-80' id="picSex-str">
+							</div>
+						</div>
+						<div class="ut-mar-t10 picStyle">&ensp;&ensp;&ensp;&ensp;
+							<div class="ut-inline-block wb-ver"><span class="ut-color-e">*</span>款式：</div>
+							<div class='ut-inline-block wb-80' id="picStyle-str">
+							</div>
+						</div>
+						<div class="ut-mar-t10 picSeason">&ensp;&ensp;&ensp;&ensp;
+							<div class="ut-inline-block wb-ver"><span class="ut-color-e">*</span>季节：</div>
+							<div class="ut-inline-block wb-80" id="picSeason-str">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">添加标签：</div>
+							<input type="text" placeholder="创建标签" class="ut-font12 ut-input ut-mar-l5 ut-mar-t5" id="addTableInput" />
+							<div class="ut-btn btn-1 ut-mar-l10 ut-mar-t5" id="addTableBtn">添加</div>
+							<div id="picTab-search">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">已选标签：</div>
+							<div id="picTab-Add" class="ut-inline-block ut-mar-l5 tableLabel">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">推荐标签：</div>
+							<div id="picTab-recommend" class="ut-inline-block ut-mar-l5 wb-80">
+							</div>
+						</div>
+					</div>
+					<div class="picBtn">
+						<div class="ut-btn btn-3 ut-mar-t20 w-120" onclick="pictureManage.closeFunction()">取消</div>
+						<div class="ut-btn btn-1 ut-mar-t20 w-120" id="picSave">保存</div>
+						<div class="ut-btn btn-1 ut-mar-t20 w-120" id="publicOut">发布</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="js/pictureManage.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

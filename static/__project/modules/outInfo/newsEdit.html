@@ -1,0 +1,162 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>外网资讯</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" type="text/css" href="../new/css/news.css" />
+		<link rel="stylesheet" type="text/css" href="css/infoMng.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative title-nav">当前位置：<a href="outInfo.html">外网资讯</a> &gt;
+						<span class="ut-color-g">编辑外网资讯</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font12">
+					<!--main s-->
+					<div class="ut-box ut-mar-l10">
+						<div class="ut-title">
+							<span class="square"></span>
+							<span class="title-words">基本设置：</span>
+						</div>
+						<div class="ut-body ut-overflow basic-setting border-bottom">
+							<div class="ut-fl">
+								<div class="bar">
+									<span class="name">资讯编号：</span>
+									<span id="informationNo"></span>
+								</div>
+								<div class="bar">
+									<span class="name">名　　称：</span>
+									<input type="text" class="ut-input" id="newsName" value="" style="width:450px;">
+								</div>
+								<div class="bar">
+									<span class="name">资讯描述：</span>
+									<textarea class="ut-input disShow-input" id="newsDescription" placeholder="请输入资讯描述"></textarea>
+								</div>
+								<div class="bar">
+									<span class="name">设&nbsp;&nbsp;计&nbsp;&nbsp;师：</span>
+									<input type="text" class="ut-input" id="searchDesigner" readonly="readonly" value="">
+									<input type="hidden" class="ut-input " id="searchDesignerId" value="">
+								</div>
+								<div class="bar">
+									<span class="name">分类设置：</span>
+									<select class="ut-input" id="firstCategory">
+										<option value="">请选择性别</option>
+										<option value="2">女士</option>
+										<option value="1">男士</option>
+									</select>
+									<select class="ut-input" id="secondCategory">
+										<option value="">请选择品类</option>
+									</select>
+									<select class="ut-input" id="thirdCategory">
+										<option value="">请选择类型</option>
+									</select>
+								</div>
+								<div class="bar">
+									<span class="name">发布位置：</span>
+									<div class="ut-inline-block out-style">
+										<label class="span-middle">
+											<input type="checkbox" class='out-styleCheck outWeb' value="web" name='net'><span class="ut-mar-l5">Tailorx官网</span>
+										</label>
+										<label class="span-middle ut-mar-l10">
+											<input type="checkbox" class='out-styleCheck  outApp' value="app" name='net'><span class="ut-mar-l5">APP</span>
+										</label>
+									</div>
+								</div>
+								<!-- <div class="bar">
+				<span class="name">价格区间：</span>
+				<input type="text" id="minPrice" class="ut-input w-80" placeholder="价格下限" onkeyup="this.value=this.value.replace(/\D/g,'')"
+				onblur="this.value=this.value.replace(/\D/g,'')"  value=""> ~
+				<input type="text" id="maxPrice" class="ut-input w-80" placeholder="价格上限" onkeyup="this.value=this.value.replace(/\D/g,'')"
+					onblur="this.value=this.value.replace(/\D/g,'')" value="">
+			</div> -->
+							</div>
+						</div>
+					</div>
+
+					<div class="ut-mar-t20 ut-box ut-mar-l10">
+						<div class="ut-title">
+							<span class="square"></span>
+							<span class="title-words">封面设置：</span>
+						</div>
+						<div class="ut-body">
+							<div class="picture-box picture-setting descriptionsShow" id="pictureBox">
+								<div class="img-box">
+
+									<i class="fa fa-upload"></i>
+									<p class="title-tips ut-mar-t5" id="title-tips1">点击上传</p>
+									<img id="coverImg" src="" alt="">
+									<input type="file" class="upload" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="ut-mar-t20 ut-box ut-mar-l10">
+						<div class="ut-title">
+							<span class="square"></span>
+							<span class="title-words">Banner图片设置：</span>
+						</div>
+						<div class="ut-body">
+							<div class="picture-box picture-setting descriptionsShow" id="pictureBox2">
+								<div class="img-box">
+									<i class="fa fa-upload"></i>
+									<p class="title-tips ut-mar-t5" id="title-tips1">点击上传</p>
+									<img id="bannerImg" src="" alt="">
+									<input type="file" class="upload" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="ut-mar-t20 ut-box ut-mar-l10">
+						<div class="ut-title">
+							<span class="square"></span>
+							<span class="title-words">图文设置：</span>
+							<span class="ut-btn btn-1 ut-fr " id="removeBtn">删除</span>
+						</div>
+						<div class="ut-body escriptions descriptionsShow" id="descriptions">
+						</div>
+						<div><span class='glyphicon glyphicon-plus ut-mar-l10 pointer ut-font18' id="addDescriptions"></span></div>
+						<div class="ut-text-center ut-mar-t20">
+							<span class="btn-3 ut-btn w-160" id="backNewsBtn">返回</span>
+							<span class="btn-1 ut-btn w-160" id="updateNewsBtn" data-id="">保存</span>
+							<span class="btn-2 ut-btn w-160" id="publishNewsBtn" data-id=''>发布</span>
+						</div>
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="../outInfo/js/addNews.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,143 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>排号管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="../../lib/laydate/need/laydate.css">
+		<link rel="stylesheet" href="../../lib/laydate/skins/default/laydate.css">
+		<link rel="stylesheet" href="../new/css/news.css" />
+		<link rel="stylesheet" href="css/queueManage.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative" style="display: none">当前位置：<span>排号管理</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box">
+					<!--main s-->
+					
+				<div class="ut-border-dashed condition-box ut-pad-10 ut-border ut-font12">
+					<div class="search-box">
+						<i class="fa fa-search"></i> <input type="text" class="ut-input" id="keyword" placeholder="手机号/订单编号">
+					</div>
+					<div>
+						<span class="name1">设计师名称：</span>
+						<div class="conditions design ut-inline-block">
+							<span class="checked all_s" type="all">所有</span> 
+							<span class="all_a" type="custom">自定义查看</span>
+						</div>
+
+						<div class="choiced-box none ut-font12">
+							<i class="fa fa-caret-down"></i> 
+							<span class="ut-btn btn-2" id="removeBtn" >清除</span>
+						</div>
+						
+					</div>
+					<div class="btn-time">
+						<span class="ut-mar-t5">提交时间：</span> 
+						<input type="text"class="ut-input laydate-icon" id="startTime" readonly > 
+						--- 
+						<input type="text" class="ut-input laydate-icon"  id="endTime" readonly >
+						
+					</div>
+					<!--<div class="cfy">
+						<span class="name1">分类：</span>
+						<div class="conditions ut-inline-block" id="classify">
+						</div>
+					</div>-->
+				</div>
+
+				<table class="table ut-font12" id='table_page'>
+				<thead>
+					<tr>
+						<td>排号</td>
+						<td>提交时间</td>
+						<td>分类</td>
+						<td>排号持有者</td>
+						<td>手机号</td>
+						<td>定制订单编号</td>
+						<td>设计师</td>
+						<td>操作</td>
+					</tr>
+					<tr class='no-msg text-center no-user' id='tableId' style='height: 300px;display:none'><td colspan="9">暂无排号信息</td></tr>
+					</thead>
+					<tbody>
+					 
+					</tbody>
+				</table>
+				
+				<!--分页-->
+      				<div class="ut-fr ut-mar-t20">
+		                <div class="M-box" class="ut-fr" id="templatePage"></div>
+		            </div>
+				   
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+		
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="js/rank_queue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/template.js" type="text/javascript" charset="utf-8"></script>
+		<script id='pageTabList' class="pageTabList" type="text/html">
+        {{each rows as row i}}
+        	<tr class="ut-border">
+						<td>{{row.sort_no}}</td>
+						<td>{{row.create_time}}</td>
+						<td>
+							<div class="img-box"><img src="{{!!row.picture_url ? row.picture_url : '../../img/temp.png'}}" alt=""></div> 
+							<span>{{row.cName}}</span>
+						</td>
+						<td>
+							<div class="img-box photo"><img src="{{!!row.customerPhoto ? row.customerPhoto : '../../img/temp.png'}}" alt=""></div> 
+							<span>{{row.customerName}}</span>
+						</td>
+						<td>{{row.customerPhone}}</td>
+						<td>{{row.order_no}}</td>
+						<td>
+							<div class="img-box photo"><img src="{{!!row.designerPhoto ? row.designerPhoto : '../../img/temp.png'}}" alt="">
+							</div>
+							<p>{{row.designerName}}</p>
+						</td>
+						<td><a href="javascript:;"  class="link ut-mar-b10 bid bidlink" id='{{row.rankId}}'>竞价状况</a> 
+						<!--<a href="javascript:;" id='{{row.rankId}}' data-id='{{row.sort_no}}' class="link linklink">进入生产</a>-->
+						</td>
+					</tr>
+      	  {{/each}}
+	</script>
+
+
+	
+	</body>
+
+</html>

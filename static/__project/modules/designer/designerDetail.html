@@ -1,0 +1,195 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>设计师管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/designer.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative title-nav">当前位置：<a href="designerV2.html">设计师管理</a> &gt;
+						<span class="ut-color-g">详情</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box">
+					<!--main s-->
+					<div id="designer-edit" class="designer-detail">
+						<!--设计师详情页面-->
+						<div class="edit-designer">
+							<!--<ol class="breadcrumb">
+								<li>
+									<a href="javascript:;" onclick="detail.listDesigner()">设计师列表</a>
+								</li>
+								<li class="active">设计师详情 </li>
+							</ol>-->
+							<div class="ut-box">
+								<div class="ut-title">
+									<div class="square"></div>
+									<div class="title-words">基本信息</div>
+									<a href='javascript:;' class="ut-fr ut-btn btn-1" onclick="detail.editDesigner()">
+										<span class="glyphicon glyphicon-pencil"></span> <span> 编辑</span>
+									</a>
+								</div>
+								<div class="ut-body ut-mar-t15 edit">
+									<div class="border-r left-designer">
+										<div class="designer-portrait ut-mar-b20 ut-mar-t10">
+											<img id="photoImg" src="../../img/temp.png" alt="">
+										</div>
+										<div>
+											<div class="ut-mar-b10">
+												<span>姓名：</span> <span id="name"></span>
+											</div>
+											<div class="ut-mar-b10">
+												<span>等级：</span> <span id="level"></span>
+											</div>
+											<div class="ut-mar-b10">
+												<span>QQ号码：</span> <span id="qq"></span>
+											</div>
+											<div class="ut-mar-b10">
+												<span>手机号码：</span> <span id="phone"></span>
+											</div>
+											<div class="ut-mar-b10">
+												<span>微信号：</span> <span id="we_chat"></span>
+											</div>
+										</div>
+									</div>
+									<div class="designer-detail">
+										<div class="border-r">
+											<div class="dd-describe">
+												<div class="ut-mar-t20">设计师简介</div>
+												<div class="ut-mar-t20" id="introduction"></div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 col-md-4" id="work_experience_div">
+													<input type="hidden" id="workData" value=''>
+													<div class="dd-subtitle ut-mar-t10 ut-mar-b10">工作经历</div>
+												</div>
+												<div class="col-xs-12 col-md-4" id="education_experience_div">
+													<input type="hidden" id="educationData" value=''>
+													<div class="dd-subtitle ut-mar-t10 ut-mar-b10">教育经历</div>
+												</div>
+												<div class="col-xs-12 col-md-4">
+													<div class="dd-subtitle ut-mar-t10 ut-mar-b10">工作成绩</div>
+													<div class="row row-outer ut-mar-b10">
+														<div class="col-xs-2 sub-name">
+															<span class="glyphicon glyphicon-compressed"></span>
+														</div>
+														<div class="col-xs-10">
+															成交量：<span id="order_count">0</span>
+														</div>
+													</div>
+													<div class="row row-outer ut-mar-b10">
+														<div class="col-xs-2 sub-name">
+															<span class="glyphicon glyphicon-earphone"></span>
+														</div>
+														<div class="col-xs-10">
+															预约量：<span id="appointmentAmount">0</span>
+														</div>
+													</div>
+													<div class="row row-outer ut-mar-b10">
+														<div class="col-xs-2 sub-name">
+															<span class="glyphicon glyphicon-usd"></span>
+														</div>
+														<div class="col-xs-10">
+															收益金额：<span id="deal_count">0</span>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div class="right-designer">
+										<div class="ut-pad-l10 ut-pad-t10">擅长风格</div>
+										<input type="hidden" id="styleData" value=''>
+										<div class="style-dd" id="goodStyle"></div>
+										<div class="ut-pad-l10 ut-pad-t10">最大设计量</div>
+										<div class="ut-pad-l10 ut-pad-t10" id="max_design">0单/天</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="ut-box ut-mar-t20">
+								<div class="ut-title">
+									<div class="square"></div>
+									<div class="title-words">作品展示</div>
+								</div>
+								<div class="ut-body ut-mar-t15 row" id="productions">
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--main e-->
+		</div>
+		</div>
+
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script type="text/javascript" src="../../js/template.js"></script>
+		<script src="js/designerDetail.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/html" id="education_experience">
+			<div class="row row-outer ut-mar-b10">
+				<div class="col-xs-4 sub-name">专业</div>
+				<div class="col-xs-8">
+					{specialty}
+				</div>
+			</div>
+			<div class="row row-outer ut-mar-b10">
+				<div class="col-xs-4 sub-name">学校</div>
+				<div class="col-xs-8">
+					{school}
+				</div>
+			</div>
+		</script>
+
+		<script type="text/html" id="work_experience">
+			<div class="row row-outer ut-mar-b10">
+				<div class="col-xs-4 sub-name">职位</div>
+				<div class="col-xs-8">
+					{position}
+				</div>
+			</div>
+			<div class="row row-outer ut-mar-b10">
+				<div class="col-xs-4 sub-name">公司</div>
+				<div class="col-xs-8">
+					{company}
+				</div>
+			</div>
+		</script>
+
+	</body>
+
+</html>

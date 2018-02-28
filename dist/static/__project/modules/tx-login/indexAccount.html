@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<!--	<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="css/account.css" />-->
+	</head>
+	<body>
+		 <!--修改密码弹窗-->
+                  <div class="layer homepagePassword">
+                    <div class="layer-outer1">
+                        <div class="layer-detail row">
+                            <div class="layer-logo">
+                                <div class="logo-picture">
+                                    <img src="img/logo.png" alt="logo">
+                                </div>
+                                <div class="logo-text font-bold ut-font14">
+                                    后台管理系统
+                                </div>
+
+                            </div>
+                            <div class="layer-password">
+                                <div class="password-title font-bold ut-font14">
+                                    修改密码
+                                </div>
+                                <div class="password-input">
+                                    <span class="fa fa-phone ut-font18"></span>
+                                    <div class="ut-inline-block input-border ut-font14">
+                                        <input type="text" placeholder="手机号" id="account-username" value="" disabled>
+                                    </div>
+                                </div>
+                                <div class="password-input">
+                                    <span class="fa fa-lock ut-font18"></span>
+                                    <div class="ut-inline-block input-border ut-font14">
+                                        <input type="password" placeholder="密码" id="oncePassWord">
+                                    </div>
+                                </div>
+                                <div class="password-input">
+                                    <span class="fa fa-tasks ut-font18"></span>
+                                    <div class="ut-inline-block input-border ut-font14">
+                                        <input type="password" placeholder="确认密码" id="secondPassWord">
+                                    </div>
+                                </div>
+                                <div class="password-input">
+                                    <span class="fa fa-envelope ut-font18"></span>
+                                    <div class="ut-inline-block input-border ut-font14">
+                                        <input type="text" placeholder="短信验证码" id="downCode">
+                                        <div class="ut-fr msg ut-border ut-radius6 getCode ut-pointer ut-font14" onclick="account.verificatio()">获取验证码</div>
+                                    </div>
+                                </div>
+                                <div class="ut-text-center ut-mar-t20" >
+                                    <span class="ut-btn btn-3 submit-password ut-mar-r10 submit-btn" id="account-submit">确认修改</span>
+                                    <span class="ut-btn btn-3 submit-btn cancel-layer" id="cancel-layerBtn">取消</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	</body>
+	<script type="text/javascript" >
+		account.init();
+	/*	$('#cancel-layerBtn').on('click',function(){
+			console.info(9090);
+			$('#layer-pass').css('display','none');
+//			$('.homepagePassword').css('display','none');
+		})*/
+	</script>
+</html>

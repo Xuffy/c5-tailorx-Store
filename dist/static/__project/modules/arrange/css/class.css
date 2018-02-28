@@ -1,0 +1,639 @@
+body {
+	background-color: #E8E8E8;
+}
+.claMan a{
+	text-decoration: none;
+}
+.cal-a{
+	list-style: none!important;
+	color: #555;
+}
+.cal-a:hover{
+	list-style: none!important;
+	text-decoration: none!important;
+	color: #555;
+}
+.cur{
+	cursor: pointer;
+}
+.cal-a-color:hover{
+	color: #29b6f6;
+}
+.cal-a-color{
+	color: #29b6f6;
+}
+.cla-store-content {
+	background-color: #E8E8E8;
+}
+
+.cla-title {
+	/*border:1px solid red;*/
+	background-color: #D9D9D9;
+	height: 35px;
+	line-height: 35px;
+}
+.cla-title a{
+	list-style: none;
+	color: none;
+}
+.cla-row {
+	margin-bottom: 15px;
+}
+
+.cla-active {
+	margin-left: 60px;
+	font-weight: bold;
+	
+}
+.cal-cursor{
+	cursor: pointer;
+}
+.cla-set {
+	margin-left: 25px;
+	font-weight: bold;
+	color: #555555;
+}
+
+.cla-set1 {
+	margin-left: 42px;
+}
+
+.cla-newClass {
+	width: 60px;
+	height: 25px;
+	padding: 4px 0px;
+	font-size: 12px;
+}
+
+.cla-btnNew {
+	padding-left: 0px;
+	font-size: 12px;
+}
+
+.cal-taCont {
+	background-color: #fff;
+	text-align: center;
+	padding: 168px 0px;
+	font-weight: bold;
+	color: #555555;
+}
+
+
+/*班次排列修改*/
+
+.cal-classSet {
+	float: left;
+}
+
+.cal-newSet {
+	float: right;
+}
+
+.cla-set0 {
+	margin-left: 0px;
+	font-weight: bold;
+	color: #555555;
+}
+
+
+/*排班管理右边*/
+
+.cal-right {
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+.cal-rightCont {
+	width: 100%;
+	line-height: 35px;
+	height: 35px;
+	border-bottom: 1px solid #bbb;
+}
+
+.widget-content {
+	padding: 15px;
+}
+
+.arrange-circle {
+	width: 15px;
+	height: 15px;
+	border: 1px solid #209D1F;
+	background: #2BAF2B;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 15px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 5px;
+	    margin-bottom: 0px;
+}
+}
+
+.arrange-circleW {
+	/* width: 100%;
+	height: 15px;
+	line-height: 15px;
+	font-size: 12px; */
+}
+
+.widget-contentLie {
+	border: none;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	line-height:22px;
+}
+
+.widget-contentLie-last {
+	padding-bottom: 20px;
+}
+
+
+/*帮助结束*/
+
+
+/*--------------------------------------添加班次-----------------------------*/
+
+
+/*--------------------------------------添加班次-----------------------------*/
+
+.claMan {
+	/*overflow: hidden;*/
+	position: relative;
+	/*z-index: 12;*/
+}
+
+.addCal-right {
+	background: #fff;
+	box-sizing: border-box;
+	padding-bottom: 30px;
+}
+
+.addCalClose {
+	display: inline-block;
+	float: left;
+}
+
+.addSub {
+	display: inline-block;
+	float: right;
+}
+
+
+/*班次名称*/
+
+.addCla-nameInput {
+	width: 100%;
+	padding: 0;
+}
+
+.addCla-go-nameInput {
+	width: 100%;
+	padding: 0;
+}
+
+.addClass-yes {
+	margin-left: 40px;
+}
+
+.addCla-yes-nameInput {
+	width: 35%;
+	padding: 0;
+}
+
+.cal-class-name {
+	padding: 10px;
+}
+
+/*是否*/
+/*.cal-lineheight{
+	margin-top:-6px;
+	display: inline-block;
+}*/
+.cal-lineheight{
+	vertical-align: 2px;
+	line-height: 22px;
+	/*height: 25px;*/
+	padding: 0px 10px;
+}
+.addClass-name {
+	display: inline-block;
+}
+
+
+/*上班时间*/
+
+.add-go-time {
+	float: left;
+}
+
+.addClass-go {
+
+}
+
+.addClass-input {
+	width: 50%;
+	display: inline-block
+}
+
+.addCla-go-nameInput {
+	width: 100%;
+}
+
+.addClass-down {
+	display: inline-block;
+	width: 50%;
+}
+
+
+/*--------------------------------------再次添加班次-----------------------------*/
+
+
+/*--------------------------------------再次添加班次-----------------------------*/
+
+.cal-againCont {
+	background-color: #fff;
+	padding: 20px;
+	font-weight: bold;
+	color: #555555;
+}
+
+.again-title {
+	display: inline-block;
+	text-align: left;
+}
+
+.again-title-edit {
+	float: right;
+}
+
+.again-font {
+	font-weight: normal;
+}
+
+.again-purple {
+	color: purple;
+}
+
+
+/*添加设计师弹框*/
+
+.designer-deAdd {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: rgba(102, 102, 102, 0.5);
+	z-index: 11;
+}
+
+.bounced-deAdd {
+	width: 350px;
+	height: 185px;
+	text-align: center;
+	background: #FFFFFF;
+	font-size: 12px;
+	margin: 200px auto auto auto;
+	color: #000000;
+}
+
+.bounced-deAdd span {
+	line-height: 100px;
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+.againError {
+	color: orange;
+	font-size: 50px;
+}
+
+.arrangeAdd-btn1 {
+	margin-top: 15px;
+}
+
+
+/*--------------------------------------排班设置次-----------------------------*/
+
+
+/*--------------------------------------排班设置次-----------------------------*/
+
+.arrange-none {
+	color: #555555
+}
+
+.arrange-avtive {
+	color: #29b6f6;
+	;
+}
+
+.arrange-taCont {
+	background-color: #D9D9D9;
+	text-align: center;
+	padding: 10px;
+	border: none;
+}
+
+.arrange-set {
+	/*background-color: #efefef;*/
+	height: 300px;
+}
+
+
+/*班车设置*/
+
+.arrange-menology {
+	width: 256px;
+	height: 253px;
+	background-color: #fff;
+	display: inline-block;
+	overflow: hidden;
+	margin: 20px 0px 20px 40px;
+}
+
+.arrange-menologyWz {
+	width: 20%;
+	height: 230px;
+	display: inline-block;
+	overflow: hidden;
+	margin: -10px 0px 20px 10px;
+	padding-top: 10px;
+	text-align: left;
+}
+
+.arrange-menologyWz p {
+	color: #000;
+	margin-top: 10px;
+}
+
+.arrange-menologyWz .arrange-Wgreen {
+	color: #2BAF2B;
+}
+
+.arrange-menologyWz .arrange-Wred {
+	color: #E31C23;
+}
+
+.arrange-menologyWz .arrange-Wblue {
+	text-decoration: underline;
+	color: #5677FC;
+}
+
+
+/*--------------------------------------添加排班-----------------------------*/
+
+
+/*--------------------------------------添加排班次-----------------------------*/
+
+.classAddArrangeCont {
+	position: relative;
+}
+.arrange-ma-bg-outer{
+	position: fixed;
+	left: 0;
+	width:1200px;
+	height:100%;
+	background-color:rgba(0,0,0,0.5);
+	top:45px;
+	z-index:13;
+	margin:0 auto;
+	right:0;
+}
+.arrange-ma-bg{
+	position: absolute;
+	right: 0;
+	width: 75%;
+	/*height: 47px;*/
+	background-color: #fff;
+	padding: 10px;
+	top:0;
+	max-height:90%;
+	overflow-y:scroll;
+}
+
+
+/*添加排班弹框*/
+
+.addArrange-setName {
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #bbb;
+}
+
+.addArrangeSub {
+	float: right;
+}
+
+.content-ClassAdd {
+	position: relative;
+}
+
+.addArrange-setName-shuru {
+	height: 22px;
+	line-height: 22px;
+	margin-top: 10px;
+}
+
+.addArrange-setName-shuru>h5 {
+	display: inline-block;
+}
+
+.addArrange-setName-shuruName {
+	width: 43%;
+}
+
+.addArrange-setTimeS {
+	width: 20%
+}
+
+
+/*表格*/
+
+.order-td th,
+.order-td td {
+	width: 74px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 8px 4px!important;
+}
+
+.order-td th{
+	border-bottom:1px !important;
+	background-color: #5bc0de;
+}
+.order-td td select {
+	width: 100%;
+	height: 20px;
+	border-radius: 2px;
+}
+
+#th-Wbule {
+	background-color: #2f96b4;
+}
+/*--------------------------------------排班添加完成-----------------------------*/
+
+
+/*--------------------------------------排班添加完成-----------------------------*/
+.over-menology{
+	margin-left: 0px;
+}
+.over-menologyWz{
+	width: 25%;
+}
+.over-content{
+	text-align: left;
+}
+.over-set{
+	font-weight: bold;
+	color: #555555;
+}
+.over-bg{
+	background-color: #fff;
+	text-align: left;
+	margin-top: 2px;
+}
+.over-status{
+	line-height: 30px;
+	height: 30px;
+}
+.over-status span{
+	cursor:pointer;
+}
+.over-tatle-cont{
+	padding: 10px;
+}
+
+
+.over-start{
+	display: inline-block;
+	background-color:#FFA726 ;
+	color: #fff;
+	border: 1px solid #FB8C00;
+	padding: 0 2px;
+}
+.over-end{
+	display: inline-block;
+	background-color:rgb(232, 78, 64);
+	color: #fff;
+	border: 1px solid rgb(232, 78, 64);
+	padding: 0 2px;	
+}
+.over-cut{
+	float: right;
+	width: 40px;
+	height: 24px;
+	padding: 2px;
+	margin-top: -2px;
+	border-radius: 10px;
+	background-color:#4da146; 
+}
+.over-cut-circle{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: #fff;
+	cursor: pointer;
+	margin-left: 0px;
+}
+.over-active .over-end{
+	display:none;
+}
+.over-disabled .over-start{
+	display:none;
+}
+.over-disabled .over-cut{
+	background:rgb(187, 187, 187);
+}
+.over-disabled .over-cut-circle{
+	margin-left:15px;
+}
+
+
+.caCircle{
+	background-color: #bbb;
+	margin-left: 20px;
+}
+.over-logo-right{
+	float: right;
+	font-size: 18px;
+	color:#bbb;
+	margin-right: 10px;
+	cursor: pointer;
+}
+/*yanse*/
+.over-font-weight{
+	font-weight: bold;
+}
+.oa-green{
+	color:#2BAF2B ;
+}
+.oa-orange{
+	color: #FFA726;
+}
+.oa-skybule{
+	color: #26C6DA;
+}
+.oa-greenBg{
+	background-color:#2BAF2B ;
+}
+.oa-skybuleBg{
+	background-color:#26C6DA; ;
+}
+.oa-orangeBg{
+	background-color:#FFA726; ;
+}
+.oa-redBg{
+	background-color: #E84E40;
+}
+/*表格*/
+.over-td th,
+.over-td td {
+	width: 74px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 3px 4px!important;
+	border: 1px solid #bbb;
+	color: #fff;
+}
+.over-td td:first-child{
+	color:#555;
+}
+.over-td th{
+	border-bottom:1px !important;
+	background-color: #78909C;
+	
+}
+
+/*huangwei*/
+.claMan .new.change{
+	font-size: 12px;
+}
+/* 已开启 未开启 */
+.cal-cut-close{
+	margin-left:15px;
+	
+}
+.over-cut-close{
+	background-color:#bbb;
+}
+.over-start-close{
+	background-color:#E84E40;
+}
+ /* 新建排班 关闭 */
+ .fa-addArr-close{
+ 	cursor:pointer;
+ }1w
+ .arrange-Wblue{
+ cursor:pointer;
+ }
+ .pmu-selected.pmu-disabled{
+ 	background:#c9302c!important;
+ }
+.pmu-not-in-month.pmu-selected{
+	opacity:0.5;
+}
+.pmu-selected.today{
+	position:relative;
+	background:#5bc0de!important;
+}

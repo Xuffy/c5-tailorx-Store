@@ -1,0 +1,286 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>作品管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative title-nav">当前位置：
+				<a href="worksShow.html">作品管理</a> &gt;
+				<span class="ut-color-g">详情</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font14">
+					<!--main s-->
+					<div class="ut-mar-t10">
+						<div class="ut-title">
+							<span class="square"></span>
+							<span class="title-words">基本设置</span>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block ut-mar-r20">
+								&ensp;&ensp;作品标题：<input type="text" class="ut-input w-300" id="wdTitle" />
+							</div>
+							<div class="ut-inline-block">
+								&ensp;&ensp;价格：<input type="text" class="ut-input w-80 ut-mar-r5" id="wdPrice" />元
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class='ut-inline-block ut-va-top'>设计师评价：</div>
+							<div class="orderAll-need-cont workDetail-text">
+								<textarea class="orderAll-design" id="wdDesiVal"></textarea>
+							</div>
+						</div>
+
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver">&ensp;&ensp;<span class="ut-color-e">*</span>性&ensp;&ensp;&ensp;别：
+							</div>
+							<div class='ut-inline-block wb-80' id="firstAll">
+							</div>
+						</div>
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver">&ensp;&ensp;<span class="ut-color-e">*</span>款&ensp;&ensp;&ensp;式：</div>
+							<div class='ut-inline-block wb-80' id="secondAll">
+							</div>
+						</div>
+						<div class="ut-mar-t10 picSys">
+							<div class="ut-inline-block wb-ver">&ensp;&ensp;<span class="ut-color-e">*</span>季&ensp;&ensp;&ensp;节：</div>
+							<div class="ut-inline-block wb-80" id="thirdAll">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">&ensp;&ensp;添加标签：</div>
+							<input type="text" placeholder="创建标签" class="ut-font12 ut-input ut-mar-l5 ut-mar-t5" id="addTableInput" />
+							<div class="ut-btn btn-1 ut-mar-l10 ut-mar-t5" id="addTableBtn">添加</div>
+							<div id="picTab-search">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">&ensp;&ensp;已选标签：</div>
+							<div id="picTab-Add" class="ut-inline-block ut-mar-l5 tableLabel">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block wb-ver">&ensp;&ensp;推荐标签：</div>
+							<div id="picTab-recommend" class="ut-inline-block ut-mar-l5 wb-80">
+							</div>
+						</div>
+					</div>
+					<!--<div class="ut-mar-t20">
+						<div class="ut-title">
+							<span class="square"></span>
+							<span class="title-words">参考图片：</span>
+						</div>
+						<div id="wd-refer" class="ut-mar-t20 ut-mar-l20">
+							<div class="ut-inline-block wd-refer-msg ut-relative">
+								<img src="../../img/zhanwei.jpg" alt="" />
+								<input type="file" class="single-upload" />
+							</div>
+							<div class="ut-inline-block wd-refer-msg ut-relative">
+								<img src="../../img/zhanwei.jpg" alt="" />
+								<input type="file" class="single-upload" />
+							</div>
+							<div class="ut-inline-block wd-refer-msg ut-relative">
+								<img src="../../img/zhanwei.jpg" alt="" />
+								<input type="file" class="single-upload" />
+							</div>
+						</div>
+					</div>-->
+					<div class="ut-mar-t20">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">参考图片</div>
+							<div class='ut-mar-t20 ut-mar-l20'>
+								<div class="many-upload ut-btn btn-1 ut-relative">
+									<label for="multUpload"><span class="glyphicon glyphicon-cloud-upload"></span> 上传</label>
+									<input type="file" class="cadList-upload ut-none" multiple="multiple" id="multUploadPrm">
+								</div>
+								<span class="ut-color-e ut-fr line-h27">数量限制：<span id="pictureNumPrm">0</span>/3</span>
+							</div>
+						</div>
+						<div class="ut-mar-t20 ut-relative ut-mar-l20" id="imgOuterPrm">
+							<div class="ut-fl" id="imgOuter-addPrm">
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="ut-mar-t20 orderMes-table">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">面料信息</div>
+						</div>
+						<div class="ut-mar-t20 ut-mar-l20">
+							<div class='ut-btn btn-1' id="addLine">添加</div>
+						</div>
+						<div class="ut-mar-t20">
+							<table id="tableLining">
+							</table>
+						</div>
+					</div>
+					<div class="ut-mar-t20">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">里料信息</div>
+						</div>
+						<div class="ut-mar-t20 ut-mar-l20">
+							<div class='ut-btn btn-1' id="addMera">添加</div>
+						</div>
+						<div class="ut-mar-t20 orderMes-table">
+							<table id="tableMaterial">
+							</table>
+						</div>
+					</div>
+					<div class="ut-mar-t20">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">辅料信息</div>
+						</div>
+						<div class="ut-mar-t20 ut-mar-l20">
+							<div class='ut-btn btn-1' id="addAcce">添加</div>
+						</div>
+						<div class="ut-mar-t20 orderMes-table">
+							<table id="tableAccessory">
+							</table>
+						</div>
+					</div>
+					<div class="ut-mar-t20">
+						<div class="ut-title">
+							<div class="square"></div>
+							<div class="title-words">设计稿</div>
+							<div class='ut-mar-t20 ut-mar-l20'>
+
+								<div class="many-upload ut-btn btn-1 ut-relative">
+									<label for="multUpload"><span class="glyphicon glyphicon-cloud-upload"></span> 上传</label>
+									<input type="file" class="cadList-upload ut-none" multiple="multiple" id="multUpload">
+								</div>
+								<span class="ut-color-e ut-fr line-h27">数量限制：<span id="pictureNum">0</span>/20</span>
+							</div>
+						</div>
+
+						<div class="ut-mar-t20 ut-relative ut-mar-l20" id="imgOuter">
+							<div class="ut-fl ut-none" id="imgOuter-add" onclick="worksDetail.imgOuterAdd()"><i class="fa fa-plus ut-color-g ut-font16 ut-pointer"></i></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="ut-mar-t20">
+						<div class="ut-title">
+							<span class="square"></span>
+							<span class="title-words">用户评价</span>
+						</div>
+
+						<div class="ut-mar-t10 ut-mar-l20">
+							<div class="customerNum">
+								<div class="ut-inline-block ut-va-top ut-pad-t5">&emsp;评价内容</div>
+								<div class="curt-text orderAll-need-cont workDetail-text wd-evaluate">
+								</div>
+							</div>
+							<div class="customerNum customerNum1">
+								<span>&emsp;综合评分</span>
+								<i class="fa fa-star cust-star1"></i>
+								<i class="fa fa-star cust-star2"></i>
+								<i class="fa fa-star cust-star3"></i>
+								<i class="fa fa-star cust-star4"></i>
+								<i class="fa fa-star cust-star5"></i>
+							</div>
+							<div class="customerNum customerNum2">
+								<span>设计师评分</span>
+								<i class="fa fa-star cust-star1"></i>
+								<i class="fa fa-star cust-star2"></i>
+								<i class="fa fa-star cust-star3"></i>
+								<i class="fa fa-star cust-star4"></i>
+								<i class="fa fa-star cust-star5"></i>
+							</div>
+							<div class="customerNum customerNum3">
+								<span>&emsp;工厂评分</span>
+								<i class="fa fa-star cust-star1"></i>
+								<i class="fa fa-star cust-star2"></i>
+								<i class="fa fa-star cust-star3"></i>
+								<i class="fa fa-star cust-star4"></i>
+								<i class="fa fa-star cust-star5"></i>
+							</div>
+						</div>
+
+						<!--<div class="ut-mar-t10">
+							<div class="curt-photo">
+								<div class="curt-photoOut">
+									<img src="../../img/zhanwei.jpg" alt="" />
+								</div>
+								<div class="curt-photoOut">
+									<img src="../../img/zhanwei.jpg" alt="" />
+								</div>
+								<div class="curt-photoOut">
+									<img src="../../img/zhanwei.jpg" alt="" />
+								</div>
+							</div>
+						</div>-->
+						
+						<div class="ut-mar-t20">
+						<div class="ut-title">
+							<!--<div class="square"></div>
+							<div class="title-words">参考图片</div>-->
+							<div class='ut-mar-t20 ut-mar-l20'>
+								<div class="many-upload ut-btn btn-1 ut-relative">
+									<label for="multUpload"><span class="glyphicon glyphicon-cloud-upload"></span> 上传</label>
+									<input type="file" class="cadList-upload ut-none" multiple="multiple" id="multUploadDis">
+								</div>
+								<span class="ut-color-e ut-fr line-h27">数量限制：<span id="pictureNumDis">0</span>/3</span>
+							</div>
+						</div>
+						<div class="ut-mar-t20 ut-relative ut-mar-l20" id="imgOuterDis">
+							<div class="ut-fl" id="imgOuter-addDis">
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+						
+						
+						
+						
+					</div>
+					<div class="picBtn">
+						<div class="ut-btn btn-3 ut-mar-t20 w-120" onclick="worksDetail.backFunction()">取消</div>
+						<div class="ut-btn btn-1 ut-mar-t20 w-120" id="wdPicSave">保存</div>
+						<div class="ut-btn btn-1 ut-mar-t20 w-120" id="publicOut" onclick="worksDetail.wdOutFunction()">发布</div>
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="js/worksDetail.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

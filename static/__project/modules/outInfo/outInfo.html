@@ -1,0 +1,151 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>外网资讯</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" type="text/css" href="../new/css/news.css"/>
+		<link rel="stylesheet" type="text/css" href="css/infoMng.css"/>
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative" style="display: none">当前位置：<span>外网资讯</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+				
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font12">
+					<!--main s-->
+				<div class="ut-border-dashed condition-box">
+					<div class="condition">
+						<input type="text" class="ut-input ut-mar-r5 w-370 themeNumber"  placeholder="搜索资讯主题、编号、标签、设计师名字">
+						<!-- <input type="button" class="ut-btn btn-5 search" value="搜索"></input> -->
+					</div>
+					<div class="condition">
+						<div class="ut-inline-block designer2">
+						<div class='ut-inline-block'>设计师:&ensp;</div>
+							<select name='designer' class='ut-input Designer-select w-120'>
+								<option value='-1'>全部</option>
+							</select>
+						</div>
+						<div class="ut-inline-block ut-mar-l20">
+							<div class='ut-inline-block'>状&ensp;&ensp;态:&ensp;</div>
+							<select name="issue" class="ut-input issue w-120">
+								<option value="0">全部</option>
+								<option value="123">未发布</option>
+								<option value="4">已发布</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="condition">
+						<div class="ut-inline-block sex">
+							<div class='ut-inline-block'>性&ensp;&ensp;别:&ensp;</div>
+							<select name='sex' class='ut-input sex-select w-120'>
+								<option value='-1'>全部</option>
+							</select>
+						</div>
+						<div class="ut-inline-block  ut-mar-l20 second">
+							<div class='ut-inline-block'>品&ensp;&ensp;类:&ensp;</div>
+							<select name="" class="ut-input second-select w-120">
+								<option value='-1'>全部</option>
+							</select>
+						</div>
+						<div class="ut-inline-block ut-mar-l20 third" >
+								<div class='ut-inline-block'>类&ensp;&ensp;型:&ensp;</div>
+							<select name="" class="ut-input third-select w-120">
+								<option value='-1'>全部</option>
+							</select>
+						</div>
+						
+						
+					</div>
+					<div class="condition">
+						价格区间：
+						<div class="ut-inline-block">
+							<input type="text" id="minPrice" class="ut-input w-133" placeholder="请输入"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> -
+							<input type="text" id="maxPrice" class="ut-input w-133 ut-mar-r5" placeholder="请输入"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+						</div>
+						<!--发布位置-->
+						<!--<div class="ut-inline-block ut-mar-l20 " >
+								<div class='ut-inline-block'>发布位置:&ensp;</div>
+							<select name="" class="ut-input w-120" id="issuePlace">
+								<option value='-1'>全部</option>
+								<option value='0'>Tailorx官网</option>
+								<option value='1'>App</option>
+							</select>
+						</div>-->
+					</div>
+					<div class="condition">
+						发布时间：
+						<div class="ut-inline-block">
+						<input type="text"class="ut-input laydate-icon" id="startTime"> 
+						--- 
+						<input type="text" class="ut-input laydate-icon"  id="endTime">
+						</div>
+					</div>
+				</div>
+
+	<div class="ut-mar-t20 ut-font12">
+		<div class="ut-pad-10 ut-border">
+			<table class="table ut-text-center ut-font12" id="outInfoList">
+				<tr>
+					<td>资讯编号</td>
+					<td>资讯主题</td>
+					<td>咨讯封面</td>
+					<!--<td>分类</td>-->
+					<td>价格区间</td>
+					<td>设计师</td>
+					<td>审核状态</td>
+					<!--<td>发布位置</td>-->
+					<td>发布时间</td>
+					<td>操作</td>
+				</tr>
+				
+			</table>
+			
+			<!--分页-->
+		   <div class="ut-fr ut-mar-t20">
+             <div class="M-box" class="ut-fr" id="templatePage"></div>
+           </div>
+		</div>
+	</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+		
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="js/outInfo.js" type="text/javascript" charset="utf-8"></script>
+		
+	
+	</body>
+
+</html>

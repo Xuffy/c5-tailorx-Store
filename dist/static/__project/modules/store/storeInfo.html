@@ -1,0 +1,166 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>基本信息</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/lanrenzhijia.css" />
+		<link rel="stylesheet" type="text/css" href="css/store.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+<header class="ut-relative queue-title">当前位置：
+				<span>基本信息</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box">
+					<!--main s-->
+					<div id="store">
+						<input type="button" value="编辑" class="btn ut-fr btn-info mar-5" id="editBtn">
+						<input type="button" value="取消" class="btn ut-fr btn-default ut-mar-l20 none mar-5" id="cancelBtn">
+						<input type="button" value="保存" class="btn ut-fr btn-success none mar-5" id="saveBtn" >
+						<div class="ut-box ut-mar-t20">
+        		<div class="ut-title border-bottom">
+        			<span class="square"></span>
+        			<span class="title-words">基本信息</span>
+        		</div>
+        		<div class="ut-body">
+        			<div class="row">
+        				<div class="ut-mar-b10 form-inline">
+	        				<span>门店地址：</span>
+							<div class="form-group">
+								<select class="form-control baseInfo" id="sheng" name="province" disabled>
+	        						
+	        					</select>
+							</div>
+	        				<div class="form-group">
+								<select class="form-control baseInfo" id="shi" name="city" disabled>
+	        						
+	        					</select>
+							</div>
+							<div class="form-group">
+								<select class="form-control baseInfo" id="xian" name="country" disabled>
+	        						
+	        					</select>
+							</div>
+	        				<span>街道：</span>
+	        				<div class="form-group">
+	        					<input type="text" id="jiedao" maxlength="20" placeholder="请输入" class="form-control baseInfo" disabled>
+	        				</div>
+	        				<select id="xiang" name="street" id="street" class="form-control" style="display:none"></select>
+	        				<input type="button" value="确认" class="btn btn-default baseInfo" disabled id="certain" >	        				
+	        			</div>
+        			</div>
+        			
+        			<div class="row">
+        				<p class="tips">请务必填写正确的门店地址，以便能精准搜索</p>
+        				<div class="map-box" id="mapBox"></div>
+        			</div>
+
+        			<div class="form-inline row">
+        				<div class="form-group">
+        					<span>门店名称：</span>
+        					<input type="text" id="storeName" class="form-control baseInfo"  maxlength="15" placeholder="请输入15字以内" disabled>
+        				</div>
+        				<p class="tips ut-mar-t5">请输入正确名称，该名称将直接展示在Tailorx上，便于用户查看</p>
+        				<div class="form-group">
+        					<span>联系电话：</span>
+        					<input type="text" id="phone" class="form-control baseInfo"  placeholder="请输入" disabled>
+        				</div>
+        				<p class="tips ut-mar-t5">请输入正确电话，以便用户拨打</p>
+        				<div>
+        					<span class="story-edit">门店介绍：</span>
+        					<!--<input type="text" id="phone" class="form-control baseInfo" value="${storeDto.phone}" placeholder="请输入" disabled>  -->
+        					<textarea id="introduce" class="story-textarea baseInfo form-control" maxlength="200" disabled></textarea>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+
+        	<div class="ut-box ut-overflow">
+        		<div class="ut-title">
+        			<span class="square"></span>
+        			<span class="title-words">运营状态</span>
+        		</div>
+        		<div class="ut-body">
+        			<div class="store-status radio">
+						<label class="ut-mar-r20">
+							<input type="radio" name="storeStatus" value=1 class="baseInfo" checked="checked" disabled> 运营中
+						</label>
+						<label>
+							<input type="radio" name="storeStatus" value=0 class="baseInfo" disabled> 建设中
+						</label>
+        			</div>
+        			<p class="ut-mar-t20">营业时间设置 <span class="tips">请正确设置，如非营业时间段，则将会导致无法进行用户预约</span></p>
+    				<div class="col-md-10 ut-border calendar-box ut-relative">
+    					<div id="blank"></div>
+    					<!--日历 -->
+    					<div class="calendar col-md-6">
+    					<section>
+							<article id="refresh">
+								<div class="multiple"></div>
+							</article>
+						</section>
+    					</div>
+    					<div class="calendar-desc col-md-6">
+    						<span>图例：</span>
+    						<span class="btn btn-info">今日</span>
+    						<span class="btn btn-default">工作日</span>
+    						<span class="btn btn-danger">假日</span>
+    					</div>
+    				</div>
+        		</div>
+        	</div>
+
+        	<div class="ut-text-center ut-mar-t20">
+        		<button onclick="nextStep()" class="ut-btn btn-1 w-160 next-step" id="next-step">下一步</button>
+        	</div>
+
+        	<input type="hidden" id="holidays" value="${holidays}" />
+        	<input type="hidden" id="storeid" value="${storeDto.id}" />
+			
+					</div>
+					
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="//webapi.amap.com/maps?v=1.3&key=7590fbd23d88c9cfae55b59f8a542005"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.pickmeup.js"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="../../lib/GlobalProvinces_extend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/GlobalProvinces_main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/inItLocation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/storeV2.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

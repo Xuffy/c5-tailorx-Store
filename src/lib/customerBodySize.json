@@ -1,0 +1,202 @@
+[
+  {
+    "labelId": "1",
+    "labelName": "身高",
+    "size": ""
+  },
+  {
+    "labelId": "2",
+    "labelName": "体重",
+    "size": ""
+  },
+  {
+    "labelId": "3",
+    "labelName": "一字肩围",
+    "size": ""
+  },
+  {
+    "labelId": "4",
+    "labelName": "半臂围",
+    "size": ""
+  },
+  {
+    "labelId": "5",
+    "labelName": "上领围",
+    "size": ""
+  },
+  {
+    "labelId": "6",
+    "labelName": "胸高",
+    "size": ""
+  },
+  {
+    "labelId": "7",
+    "labelName": "下领围",
+    "size": ""
+  },
+  {
+    "labelId": "8",
+    "labelName": "前腰节高",
+    "size": ""
+  },
+  {
+    "labelId": "9",
+    "labelName": "后肩宽",
+    "size": ""
+  },
+  {
+    "labelId": "10",
+    "labelName": "前臀高",
+    "size": ""
+  },
+  {
+    "labelId": "11",
+    "labelName": "后背宽",
+    "size": ""
+  },
+  {
+    "labelId": "12",
+    "labelName": "裆高",
+    "size": ""
+  },
+  {
+    "labelId": "13",
+    "labelName": "前肩宽",
+    "size": ""
+  },
+  {
+    "labelId": "14",
+    "labelName": "膝高",
+    "size": ""
+  },
+  {
+    "labelId": "15",
+    "labelName": "前胸宽",
+    "size": ""
+  },
+  {
+    "labelId": "16",
+    "labelName": "后腰节高",
+    "size": ""
+  },
+  {
+    "labelId": "17",
+    "labelName": "胸距",
+    "size": ""
+  },
+  {
+    "labelId": "18",
+    "labelName": "后臀高",
+    "size": ""
+  },
+  {
+    "labelId": "19",
+    "labelName": "上胸围",
+    "size": ""
+  },
+  {
+    "labelId": "20",
+    "labelName": "手臂长",
+    "size": ""
+  },
+  {
+    "labelId": "21",
+    "labelName": "胸围",
+    "size": ""
+  },
+  {
+    "labelId": "22",
+    "labelName": "袖笼",
+    "size": ""
+  },
+  {
+    "labelId": "23",
+    "labelName": "下胸围",
+    "size": ""
+  },
+  {
+    "labelId": "24",
+    "labelName": "臂围",
+    "size": ""
+  },
+  {
+    "labelId": "25",
+    "labelName": "中腰",
+    "size": ""
+  },
+  {
+    "labelId": "26",
+    "labelName": "腕围",
+    "size": ""
+  },
+  {
+    "labelId": "27",
+    "labelName": "胯围",
+    "size": ""
+  },
+  {
+    "labelId": "28",
+    "labelName": "手围",
+    "size": ""
+  },
+  {
+    "labelId": "29",
+    "labelName": "臀围",
+    "size": ""
+  },
+  {
+    "labelId": "30",
+    "labelName": "衣长",
+    "size": ""
+  },
+  {
+    "labelId": "31",
+    "labelName": "大腿围",
+    "size": ""
+  },
+  {
+    "labelId": "32",
+    "labelName": "袖长",
+    "size": ""
+  },
+  {
+    "labelId": "33",
+    "labelName": "膝围",
+    "size": ""
+  },
+  {
+    "labelId": "34",
+    "labelName": "腰围",
+    "size": ""
+  },
+  {
+    "labelId": "35",
+    "labelName": "小腿围",
+    "size": ""
+  },
+  {
+    "labelId": "36",
+    "labelName": "裤长/裙长",
+    "size": ""
+  },
+  {
+    "labelId": "37",
+    "labelName": "脚踝",
+    "size": ""
+  },
+  {
+    "labelId": "38",
+    "labelName": "直裆",
+    "size": ""
+  },
+  {
+    "labelId": "39",
+    "labelName": "肚围",
+    "size": ""
+  },
+  {
+    "labelId": "40",
+    "labelName": "总浪",
+    "size": ""
+  }
+]

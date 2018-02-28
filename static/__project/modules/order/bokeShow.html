@@ -1,0 +1,153 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>版库管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative" style="display: none">当前位置：<span>版库管理</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font14">
+					<!--main s-->
+					<div class="ut-border-dashed ut-bk-g">
+						<form class="ut-pad-10" id="formTable">
+							<div class="ut-pad-t5 ut-pad-b5 ut-inline-block">
+								<div class="ut-inline-block ut-mar-r20">
+									关&ensp;键&ensp;字：<input type="text" class="ut-input w-500 ut-mar-l5 keyword" placeholder="搜索标签、设计师、BOKE文件名" />
+								</div>
+
+							</div>
+							<div class="ut-pad-t5 ut-pad-b5 ut-inline-block  ut-mar-r20">
+								<span>时&ensp;&ensp;&ensp;&ensp;间： </span><input type="text" id="startTime" class="ut-input w-120 laydate-icon" />~<input type="text" class="ut-input w-120 laydate-icon" id="endTime" />
+							</div>
+							<div class="ut-pad-t5 ut-pad-b5 ut-inline-block">
+								系统标签：
+								<select name="sex" class="ut-input w-120" id="sex-select">
+									<option value="">全部性别</option>
+								</select>
+								<select name="" class="ut-input w-120" id="second-select">
+									<option value="">全部款式</option>
+								</select>
+								<select name="class" class="ut-input w-120" id="third-select">
+									<option value="">全部季节</option>
+
+								</select>
+								<div class="ut-btn btn-1 ut-mar-l20" onclick="bokeShow.searchFunction()">搜索</div>
+								<input id="res" name="res" type="reset" class="ut-btn btn-6" />
+							</div>
+							<div class="ut-pad-t5 ut-pad-b5">
+
+							</div>
+						</form>
+					</div>
+					<!--table-->
+					<div class="bokeshow-btnUpload">
+						<a href="javascript:;">
+							<div class="ut-btn btn-1" id="bokeshowUploadBtn" onclick="bokeShow.bkDetailAddFun()">上传板式</div>
+						</a>
+					</div>
+					<div class="ut-mar-t20 ut-pad-10 " id="bokeCont">
+						<div class="ut-font12" id="bokeList" style="margin-left: -20px;">
+						</div>
+
+						<div class="ut-fr ut-mar-t20">
+
+							<div class="M-box" class="ut-fr" id="templatePage"></div>
+						</div>
+					</div>
+					<div class="ut-mar-t20 ut-inline-block">共<span id="totalSize" class="ut-color-e"></span>个订单</div>
+					<div id="pageNumList" class="ut-inline-block">
+						<span class="ut-mar-l20">页数：</span>
+						<select name="class" class="ut-input w-120" id="pageNum">
+							<option value="10">10条</option>
+							<option value="20">20条</option>
+							<option value="30">30条</option>
+							<option value="40">40条</option>
+							<option value="50">50条</option>
+						</select>
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+		<!--编辑弹框-->
+		<div class="ut-layer ut-none" id="bsEditPop">
+			<div class="ut-layer-cont bsEdit ut-box ut-font14" id="bsEditPopTitle">
+				<!--<div class="ap-title  ut-relative ut-mar-b20" >
+					<div class="title-left">详情</div>
+					<i class="fa fa-close title-i ut-pointer" onclick="bokeShow.closeFunction()"></i>
+				</div>-->
+				<div style="max-height:650px;overflow:auto;padding: 10px 20px;">
+					<div class="ut-inline-block bkPop-msg" id="bkPopMsg">
+						<!--<img src="../../img/zhanwei.jpg" alt="" />-->
+						<div class="swiper-container swiper-container-horizontal" style="width: 100%;height: 100%; overflow: hidden;">
+							<div class="swiper-wrapper" id="swiper-picture">
+								<!--picture-->
+							</div>
+							<!-- Add Arrows -->
+							<div class="swiper-button-next buttonNext"></div>
+							<div class="swiper-button-prev"></div>
+						</div>
+					</div>
+					<div class="ut-inline-block ut-va-top bsEditRight">
+						<div class="ut-mar-t10">设计师：<span id="bsDesinName"></span> <span id="bsDesinTime"></span></div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block ut-va-top ut-mar-t10">标&ensp;&ensp;签：</div>
+							<div class="ut-inline-block bsLabel" id="bsDesinLabel">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block ut-va-top ut-mar-t10">版式图：</div>
+							<div class="ut-inline-block bsLabel" id="bsDesinSize">
+							</div>
+						</div>
+						<div class="ut-mar-t10">
+							<div class="ut-inline-block ut-va-top ut-mar-t10">设计说明：</div>
+							<div class="ut-inline-block bsLabel" id="bsDesinDesc">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="../../lib/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bokeShow.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

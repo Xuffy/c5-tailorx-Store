@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="renderer" content="webkit">
+<meta name="description" content="TailorX - 用互联网思维颠覆服装定制 " />
+<link type="image/x-icon" href="https://cdn.utouu.com/sso/skin/images/tailorx/tailorx.ico" rel="shortcut icon" />
+<title>TailorX - 登录</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.utouu.com/sso/skin/css/tailorx/style.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.utouu.com/sso/skin/css/tailorx/index.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.utouu.com/sso/skin/css/utouu-dialog.css?v=1495600675073"></link>
+<link rel="stylesheet" type="text/css" href="https://cdn.utouu.com/sso/skin/css/utouu-dialog-validatetip.css?v=1495600675073"></link>
+<!-- 百度统计 -->
+
+
+
+<!-- 统计 -->
+
+<script type="text/javascript" src="//aeu.alicdn.com/waf/5d61209f421532d3c36aadff2eb71535.js?t=1496222518"></script><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254831916'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/q_stat.php%3Fid%3D1254831916' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<script>
+// 	var _hmt = _hmt || [];
+// 	(function() {
+// 		var hm = document.createElement("script");
+// 		hm.src = "//hm.baidu.com/hm.js?44fcb78c48b984be2f0c85d00991a742";
+// 		var s = document.getElementsByTagName("script")[0];
+// 		s.parentNode.insertBefore(hm, s);
+// 	})();
+</script>
+<style type="text/css">
+	.login_box .material-field {width:100%;}
+</style>
+</head>
+<body class="">
+
+<div class="index-content">
+    <div class="login_banner">
+        <div class="warp_login">
+            <!-- 登录 -->
+            <div class="login">
+                <div class="login_logo"></div>
+                <div class="login_box">
+                    <div id="loginForm" >
+                        <div class="row bg_tel">
+                            <div class="small-8 columns">
+                                <div class="form-group-material">
+                                    <label class="material-label" for="username">您的手机号或用户名</label>
+                                    <input class="material-field" type="text" id="username" name="username">
+                                    <small class="error"></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row bg_pwd">
+                            <div class="small-8 columns">
+                                <div class="form-group-material">
+                                    <label class="material-label mater-pass" id="mater-pass" for="password">密码</label>
+                                    <input class="material-field" id="password" name="password" type="password"  maxlength="18"/>
+                                    <small class="error"></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="imgcodeWarp" class="row bg_pwd">
+                        	
+						</div>
+                        <div class="row">
+                            <div class="small-12 small-push-4 columns">
+                            	<input type="hidden" name="lt" value="LT-10626144-I7vycggFG7sDAgXtS5NsRcYUtrIjKl-izbp1h7fx16gksfvh5yeobz" />
+								<input type="hidden" name="execution" value="e3s1" />
+								<input type="hidden" name="accept_agreemt" value="" />
+								<input type="hidden" name="_eventId" value="submit" />
+                                <button onclick="SERVICE.doSubmit()">登录</button>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);" class="forget">忘记密码？</a>
+                </div>
+            </div>
+            <!-- 忘记密码 -->
+            <div class="resetPwd">
+                <div class="warp_reset">
+                    <h3><a href="javascript:void(0);" class="backLink" alt="返回" title="返回"></a> 密码重置</h3>
+                        <div class="row bg_tel">
+                            <div class="small-8 columns">
+                                <div class="form-group-material">
+                                    <label class="material-label" for="iptMobile">手机号</label>
+                                    <input class="material-field" id="iptMobile" type="text" />
+                                    <small class="error"></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row bg_pwd">
+                            <div class="small-8 columns">
+                                <div class="form-group-material">
+                                    <label class="material-label" for="newPwd">新密码</label>
+                                    <input class="material-field" id="newPwd" type="password" />
+                                    <small class="error"></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row bg_pwd">
+                            <div class="small-8 columns">
+                                <div class="form-group-material">
+                                    <label class="material-label" for="v-img-code2" onfocus="this.value=''" onblur="if(this.value=='')this.value=''">图形验证码</label>
+                                    <input class="material-field" id="v-img-code2" maxlength="4" type="text" />
+                                    <small class="error"></small>
+                                </div>
+                                <div class="img-code">
+									<img src="" id="v-img2" width="105" height="33" title="点击重新获取验证码 " codes="">
+								</div>
+                            </div>
+                        </div>
+                        <div class="row bg_pwd">
+                            <div class="small-8 columns">
+                                <div class="form-group-material">
+                                    <label class="material-label" id="material-passAgain" for="vCodeMsg">短信验证码</label>
+                                    <input class="material-field" id="vCodeMsg" type="text" />
+                                    <small class="error"></small>
+                                </div>
+                            </div>
+                            <button id="btnSendMassageCode" class="re_code">获取验证码</button>
+                        </div>
+                        <div class="row">
+                            <div class="small-12 small-push-4 columns">
+                                <button id="btnNext">确认修改</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="bottom-center">
+    <div class="address">
+        <div>联系电话：021-60499347&nbsp;&nbsp;&nbsp;&nbsp;地址：上海市黄浦区马当路388号复兴广场E栋2楼</div>
+        <div>Copyright © 2015-2017  www.tailorx.cn. All rights reserved.tailorx.</div>
+        <div class="industry-warp">
+            <img src="https://cdn.utouu.com/sso/skin/images/icon_1_1.jpg">
+            <img src="https://cdn.utouu.com/sso/skin/images/icon_3_1.jpg">
+        </div>
+    </div>
+</div>
+
+
+<script type="text/html" id="imgCodeTemplate">
+<div class="small-8 columns">
+	<div class="form-group-material">
+		<label class="material-label" for="imgVCode">验证码</label>
+		<input type="text" class="material-field" id="imgVCode" name="imgVCode" maxlength="4">
+		<input type="hidden" id="imgVKey" name="imgVKey">
+		<div class="img-code">
+			<img src="" id="v-img" width="105" height="33" title="点击重新获取验证码">
+		</div>
+	</div>
+</div>
+</script>
+<script type="text/html" id="agreementTemplate">
+    <div class="agreement-wrap">
+        <p>尊敬的有糖用户，您好！</p>
+        <p><a href="/register-agreement.html" target="_blank" class="agreement-link">《有糖用户服务协议》</a>现已做修改，请确认！</p>
+        <a class="agreement-submitbtn" style="margin-top:10px;">同意修改条款并继续使用</a>
+    </div>
+</script>
+<script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.utouu.com/sso/skin/vendor/artDialog/dist/dialog-min.js?v=1495600675073"></script>
+<script type="text/javascript" src="https://cdn.utouu.com/sso/skin/script/utouu.jquery.extends.alert.js?v=1495600675073"></script>
+<script type="text/javascript" src="https://cdn.utouu.com/sso/skin/vendor/jquery/jquery.cookie.js?v=1495600675073"></script>
+<script type="text/javascript" src="https://cdn.utouu.com/sso/skin/script/vendor/artTemplate/dist/template-debug.js?v=1495600675073"></script>
+<script type="text/javascript" src="https://cdn.utouu.com/sso/skin/script/jsutil.js?v=1495600675073"></script>
+	<script type='text/javascript'>var login_error_msg = '';</script>
+
+<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="modules/tx-login/js/login.js" type="text/javascript" charset="utf-8"></script>
+<!--<script type="text/javascript" src="/skin/script/tailorx-forget.pc.js?v=1495600675073"></script>-->
+<script src="modules/tx-login/js/tailorx-forget.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+(function () {
+    var materialForm;
+    materialForm = function () {
+        return $('.material-field').focus(function () {
+            $(this).closest('.bg_tel').addClass('bg_phone').removeClass("bg_tel");
+            $(this).closest('.bg_pwd').addClass('bg_password').removeClass("bg_pwd");
+            return $(this).closest('.form-group-material').addClass('focused has-value');
+        }).focusout(function () {
+            $(this).closest('.bg_phone').removeClass('bg_phone').addClass("bg_tel");
+            $(this).closest('.bg_password').removeClass('bg_password').addClass("bg_pwd");
+            return $(this).closest('.form-group-material').removeClass('focused');
+        }).blur(function () {
+            if (!this.value) {
+                $(this).closest('.form-group-material').removeClass('has-value');
+            }
+            return $(this).closest('.form-group-material').removeClass('focused');
+        });
+    };
+    $(function () {
+        return materialForm();
+    });
+}.call(this));
+
+
+$(document).ready(function(){
+    $(".forget").click(function(){
+        $("#v-img2").click();
+        $(".resetPwd").css("left","0");
+    });
+    $(".backLink").click(function(){
+        $(".resetPwd").css("left","507px");
+    });
+    
+});
+
+
+
+</script>
+</body>
+</html>
+
+
+

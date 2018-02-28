@@ -1,0 +1,222 @@
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+  <link rel="stylesheet" href="../dist/sidebar-menu.css">
+  <link rel="stylesheet" href="../../css/utsoft.css"/>
+  <link rel="stylesheet" href="../../lib/layer/skin/default/layer.css"/>
+  <link rel="stylesheet" href="../tx-login/css/account.css"/>
+  <link rel="stylesheet" type="text/css" href="css/home.css"/>
+  <link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon"/>
+</head>
+
+<body>
+<div id="headload"></div>
+<div class="htmleaf-container">
+  <header class="ut-relative" style="display: none">当前位置：<span>首页</span>
+    <div class="merchant-account" id="merchant-accountPage">
+      <!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+      <span class="ut-mar-r20 tailorx-user-name"></span>
+      <div class="merchant-userName ut-font14 ut-none">
+        <ul>
+          <li id="merchant-PassAgain">重置密码</li>
+          <!--<li id="merchant-out">退出</li>-->
+        </ul>
+      </div>
+    </div>
+
+  </header>
+  <div class="merchant-main">
+    <div class="merchant-cont ut-box">
+      <!--main s-->
+      <div id="homepage">
+        <div class="header-outer ut-overflow">
+          <div class="header ut-fl">
+            <span id="store_name" class="store-title ut-font18 font-bold">xx</span>
+            <img class="opening-img" src="../../img/opening.png" alt="营业中" id='store_img'>
+            <span class="opening font-bold" id="store_status">营业中</span>
+          </div>
+          <!--<div class="ut-fr">
+              <div class="ut-btn btn-6">
+                  <a href="javascript:jumpUrl('myStore');">修改门店信息</a>
+              </div>
+          </div>-->
+        </div>
+        <div class="management user-content">
+          <div class="total-outer">
+            <div class="out-border ut-overflow">
+              <div class="col-md-3 col-xs-6 ut-overflow border-r">
+                <div class="ut-fl img-outer">
+                  <img src="../../img/order-total.png" alt="我是图片">
+                </div>
+                <div class="ut-fl text">
+                  <div>订单总量(单)</div>
+                  <div id="store_totalOrderCount">0</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-xs-6 ut-overflow border-r no">
+                <div class="ut-fl img-outer">
+                  <img src="../../img/appointment-total.png" alt="我是图片">
+                </div>
+                <div class="ut-fl text">
+                  <div>预约总量(单)</div>
+                  <div id="store_totalAppointmentCount">0</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-xs-6 ut-overflow border-r">
+                <div class="ut-fl img-outer">
+                  <img src="../../img/transaction-total.png" alt="我是图片">
+                </div>
+                <div class="ut-fl text">
+                  <div>交易金额(元)</div>
+                  <div id="store_totalOrderAmount">0</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-xs-6 ut-overflow">
+                <div class="ut-fl img-outer">
+                  <img src="../../img/transaction-money.png" alt="我是图片">
+                </div>
+                <div class="ut-fl text">
+                  <div>交易总量(单)</div>
+                  <div id="store_totalTradeCount">0</div>
+                </div>
+              </div>
+            </div>
+            <div class="ut-overflow line-chart">
+              <div class="ut-fl col-lg-6 col-md-6 col-xs-12 ut-border ut-radius6 chart-outer">
+                <div class="font-bold">
+                  今日门店概况
+                </div>
+                <div class="money-chart" id="line" style="height: 300px;width: 100%">
+
+                </div>
+              </div>
+              <div class="ut-fl col-lg-6 col-md-6 col-xs-12">
+                <div class="ut-mar-t20 row">
+                  <div id="store_todayTradeCount" class="blue-text font-bold col-xs-4">今日交易量：0</div>
+                  <div id="store_todayOrderCount" class="orange-text font-bold col-xs-4">今日订单量：0</div>
+                  <div id="store_todayAppointmentCount" class="grey-text font-bold col-xs-4">今日预约量：0</div>
+                </div>
+                <div class="ut-mar-t20 ut-overflow">
+                  <div id="moreTrade" class="ut-fl ut-btn blue">
+                  </div>
+                  <div class="ut-btn ut-fr btn-5">
+                    <a href="../order/order.html" class="href-a">查看详情</a>
+                  </div>
+                </div>
+                <div class="ut-mar-t10 ut-overflow">
+                  <div id="moreOrder" class="ut-fl ut-btn orange">
+                  </div>
+                  <div class="ut-btn btn-5 ut-fr">
+                    <a class="href-a" href="../order/order.html">查看详情</a>
+                  </div>
+                </div>
+                <div class="ut-mar-t10 ut-overflow">
+                  <div id="moreAppointment" class="ut-fl ut-btn grey">
+                  </div>
+                  <div class="ut-btn btn-5 ut-fr">
+                    <a class="href-a" href="../order/order.html">查看详情</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ut-box">
+              <div class="ut-title ut-mar-t20">
+                <span class="square"></span>
+                <span class="title-words">今日上班人员</span>
+              </div>
+              <div class="ut-body ut-border ut-radius6 ut-mar-t20">
+                <div class="ut-overflow">
+                  <div class="ut-fr ut-mar-r20 ut-mar-t5 ut-mar-b5 ut-btn btn-5">
+                    <a class="href-a" href="../arrange/arrangeV2.html">管理</a>
+                  </div>
+                </div>
+                <div id="store_onWorkDesignerList" class="ut-overflow">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--弹窗-->
+        <div class="layer ut-none">
+          <div class="layer-outer">
+            <div class="layer-detail row">
+              <div class="col-xs-4 layer-logo">
+                <div class="logo-picture">
+                  <img src="../../img/logo.png" alt="logo">
+                </div>
+                <div class="logo-text ut-font18 font-bold">
+                  Tailorx Store
+                </div>
+              </div>
+              <div class="col-xs-8 layer-password">
+                <div class="password-title font-bold ut-font18">
+                  修改密码
+                </div>
+                <div class="password-input">
+                  <span class="glyphicon glyphicon-phone ut-font18"></span>
+                  <div class="ut-inline-block input-border">
+                    <input type="text" placeholder="手机号">
+                  </div>
+                </div>
+                <div class="password-input">
+                  <span class="glyphicon glyphicon-lock ut-font18"></span>
+                  <div class="ut-inline-block input-border">
+                    <input type="text" placeholder="密码">
+                  </div>
+                </div>
+                <div class="password-input">
+                  <span class="glyphicon glyphicon-tasks ut-font18"></span>
+                  <div class="ut-inline-block input-border">
+                    <input type="text" placeholder="图形验证码">
+                    <div class="ut-fr figure ut-border">验证码</div>
+                  </div>
+                </div>
+                <div class="password-input">
+                  <span class="glyphicon glyphicon-envelope ut-font18"></span>
+                  <div class="ut-inline-block input-border">
+                    <input type="text" placeholder="短信验证码">
+                    <div class="ut-fr msg ut-border ut-radius6">获取验证码</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="ut-btn btn-3 submit-password">确认修改</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--main e-->
+    </div>
+  </div>
+
+</div>
+
+<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../lib/echarts.min.js"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var orderStr = '';
+  var tradeStr = '';
+  var appointmentStr = '';
+
+  function jumpUrl(url) {
+    $("#menu-a a").removeClass("active");
+    $("#" + url).addClass("active");
+    $("#store-content").load("/v2/store/" + url + "/index");
+  }
+</script>
+<script src="js/home.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

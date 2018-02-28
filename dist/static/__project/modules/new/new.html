@@ -1,0 +1,160 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>TailorX资讯</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/news.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative" style="display: none">当前位置：<span>TailorX资讯</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box ut-font12">
+					<!--main s-->
+						<div class="ut-border-dashed condition-box">
+							<div class="condition">关&ensp;键&ensp;字：<input type="text" class="ut-input w-370" id="key-select" placeholder="搜索资讯编号、标签、设计师名字、标签"/></div>
+							<div class="condition">
+								系统标签：
+								<select name="sex" class="ut-input w-97" id="sex-select">
+									<option value="">全部</option>
+								</select>
+								<select name="" class="ut-input w-97" id="second-select">
+									<option value="">全部款式</option>
+								</select>
+								<select name="class" class="ut-input w-97" id="third-select">
+									<option value="">全部季节</option>
+									
+								</select>
+							</div>
+							<!--<div class="condition" id="query_sex">
+								性　别：
+								<span class="checked" value="">全部</span>
+								<span value="1">男</span>
+								<span value="2">女</span>
+							</div>-->
+							<!--<div class="designer radio" id="query_category">
+								<span class="name">品　类：</span>
+								<label><input type="radio" name="type" mark="all" checked>所有</label>
+								<label><input type="radio" name="type" mark="define">自定义查询</label>
+
+								<div class="designer-box checkbox none" id="category">
+									<div class="ut-text-center ut-mar-t10">
+										<span class="ut-btn btn-2 ut-mar-r20 certainBtn" type="品类">确定</span>
+										<span class="ut-btn btn-5 cancelBtn">取消</span>
+									</div>
+								</div>
+
+								<div class="choiced-box none ut-font12">
+									<i class="fa fa-caret-down"></i>
+									<span class="ut-btn btn-2 ut-fr removeBtn">清除</span>
+								</div>
+							</div>-->
+
+							<div class="condition" id="query_Price">
+								价格区间：
+								<span class="checked" type="all">全部</span>
+								<span type="define">自定义</span>
+								<div class="define">
+									<input type="text" id="minPrice" class="ut-input w-80" placeholder="请输入" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> -
+									<input type="text" id="maxPrice" class="ut-input w-80 ut-mar-r5" placeholder="请输入" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+									<input type="button" id="priceBtn" value="确认" class="ut-btn btn-1">
+								</div>
+
+							</div>
+							<div class="condition" id="query_status">
+								审核状态：
+								<span class="checked" value="">全部</span>
+								<!--<span value="0">已设精选</span>-->
+								<span value="1">待审核</span>
+								<span value="2">已通过</span>
+								<span value="3">未通过</span>
+							</div>
+							<!--<div class="designer radio" id="query_designer">
+								<span class="name">设计师：</span>
+								<label><input type="radio" name="designer" mark="all" checked>所有</label>
+								<label><input type="radio" name="designer" mark="define">自定义查询</label>
+
+								<div class="designer-box checkbox none" id="designerBox">
+									<div class="ut-text-center ut-mar-t10">
+										<span class="ut-btn btn-2 ut-mar-r20 certainBtn" type="设计师">确定</span>
+										<span class="ut-btn btn-5 cancelBtn">取消</span>
+									</div>
+								</div>
+
+								<div class="choiced-box none ut-font12">
+									<i class="fa fa-caret-down"></i>
+									<span class="ut-btn btn-2 ut-fr removeBtn">清除</span>
+								</div>
+							</div>-->
+						</div>
+					</div>
+
+					<div class="ut-mar-t20">
+						<div class="checkbox table-title">
+							<label><input type="checkbox" id="checkAll">全选</label>
+							<a href="javascript:;" class="ut-btn btn-1 ut-fr ut-mar-l20 w-80" id="addNewsBtn">添加资讯</a>
+							<span class="ut-btn btn-1 ut-fr w-80" id="deleteAll">删除</span>
+						</div>
+						<div class="ut-pad-10 ut-border">
+							<table class="table ut-text-center ut-font12" id="newList">
+								<tr>
+									<td>资讯编号</td>
+									<td>名称</td>
+									<td>封面</td>
+									<td>价格区间</td>
+									<td>标签</td>
+									<!--<td>性别</td>
+									<td>品类</td>-->
+									<td>状态</td>
+									<td>设计师</td>
+									<td>创建时间</td>
+									<td>操作</td>
+								</tr>
+							</table>
+
+						</div>
+							<!--分页-->
+							<div class="ut-fr ut-mar-t20">
+								<div class="M-box" class="ut-fr" id="templatePage"></div>
+							</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script src="js/news.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

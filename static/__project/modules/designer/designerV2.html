@@ -1,0 +1,171 @@
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>设计师管理</title>
+		<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/htmleaf-demo.css">
+		<link rel="stylesheet" href="../dist/sidebar-menu.css">
+		<link rel="stylesheet" href="../../css/utsoft.css" />
+		<link rel="stylesheet" href="../../lib/layer/skin/default/layer.css" />
+		<link rel="stylesheet" href="../tx-login/css/account.css" />
+		<link rel="stylesheet" href="css/designer.css" />
+		<link rel="shortcut icon" href="../../img/logo.ico" type="image/x-icon" />
+	</head>
+
+	<body>
+		<div id="headload"></div>
+		<div class="htmleaf-container">
+			<header class="ut-relative" style="display: none">当前位置：<span>设计师管理</span>
+				<div class="merchant-account" id="merchant-accountPage">
+					<!--<div class="merchant-msg"><img src="../static_factory/img/home_back.png"/></div>-->
+					<span class="ut-mar-r20 tailorx-user-name"></span>
+					<div class="merchant-userName ut-font14 ut-none">
+						<ul>
+							<li id="merchant-PassAgain">重置密码</li>
+							<!--<li id="merchant-out">退出</li>-->
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<div class="merchant-main">
+				<div class="merchant-cont ut-box">
+					<!--main s-->
+					<div id="designer">
+						<div class="ut-border-dashed">
+							<div class="ut-overflow search-outer ut-pad-10">
+								<div class="ut-fl">
+									<input class="ut-input" type="text" placeholder="姓名/ID">
+									<div class="ut-btn btn-5">搜索</div>
+								</div>
+								<div class="ut-fr ut-btn btn-2 add-designer">新增设计师</div>
+							</div>
+							<div class="ut-pad-10" id="level">
+								<span>等级：</span>
+								<a class="ut-pad-r10 active" href="javascript:;">全部</a>
+								<a class="ut-pad-r10" href="javascript:;">高级设计师</a>
+								<a class="ut-pad-r10" href="javascript:;">中级设计师</a>
+								<a class="ut-pad-r10" href="javascript:;">初级设计师</a>
+							</div>
+							<div class="ut-pad-10" id="order-count">
+								<span>成交量：</span>
+								<a class="ut-pad-r10 active all" href="javascript:;">全部</a>
+								<a class="ut-pad-r10 self" href="javascript:;">自定义</a>
+								<div class="ut-inline-block all-self hide">
+									<input class="ut-input money-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="min-order-count" type="text" placeholder="请输入"> - <input class="ut-input money-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="max-order-count" type="text" placeholder="请输入">
+									<div class="ut-btn btn-1">确认</div>
+								</div>
+							</div>
+							<div class="ut-pad-10">
+								<span>收益金额：</span>
+								<a class="ut-pad-r10 all active" href="javascript:;">全部</a>
+								<a class="ut-pad-r10 self" href="javascript:;">自定义</a>
+								<div class="ut-inline-block all-self hide">
+									<input class="ut-input money-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="min-amount" type="text" placeholder="请输入"> - <input class="ut-input money-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="max-amount" type="text" placeholder="请输入">
+									<div class="ut-btn btn-1">确认</div>
+								</div>
+							</div>
+							<div class="ut-pad-10">
+								<span>每日最大设计量：</span>
+								<a class="ut-pad-r10 all active" href="javascript:;">全部</a>
+								<a class="ut-pad-r10 self" href="javascript:;">自定义</a>
+								<div class="ut-inline-block all-self hide">
+									<input class="ut-input money-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="min-designer" type="text" placeholder="请输入"> - <input class="ut-input money-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="max-designer" type="text" placeholder="请输入">
+									<div class="ut-btn btn-1">确认</div>
+								</div>
+							</div>
+							<div class="ut-pad-10" id="designer-status">
+								<span>在职状态：</span>
+								<a class="ut-pad-r10 all active" href="javascript:;">全部</a>
+								<a class="ut-pad-r10 " href="javascript:;">在职</a>
+								<a class="ut-pad-r10 " href="javascript:;">已离职</a>
+							</div>
+						</div>
+						<div class="ut-pad-10">
+							<span>共计设计师：</span> <span class="ut-color-e"></span> <span>名</span>
+						</div>
+						<div class="ut-pad-10 ut-border">
+							<table class="designer-table ut-font12">
+								<thead>
+									<tr>
+										<td>头像</td>
+										<td>姓名（ID）</td>
+										<td>等级</td>
+										<td>成交量</td>
+										<td>收益金额</td>
+										<td>每日最大设计量</td>
+										<td>添加时间</td>
+										<td>预约量</td>
+										<td>在职状态</td>
+										<td>操作</td>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+
+							</table>
+
+						</div>
+							<!--分页-->
+							<div class="ut-fr ut-mar-t20">
+								<div class="M-box" class="ut-fr" id="templatePage"></div>
+							</div>
+						<!--添加设计师弹窗-->
+						<div class="layer ut-none add-designer-show">
+							<div class="layer-outer">
+								<div class="layer-detail row">
+									<div class="col-xs-4 layer-logo">
+										<div class="logo-picture">
+											<img src="../../img/TailorX_logo_c_50X50@2x(1).png" alt="logo">
+										</div>
+										<div class="logo-text ut-font18 font-bold">Tailorx Store</div>
+
+									</div>
+									<div class="col-xs-8 layer-password">
+										<div class="password-title font-bold ut-font18">添加设计师</div>
+										<div class="password-input">
+											<span class="glyphicon glyphicon-user ut-font18"></span>
+											<div class="ut-inline-block input-border">
+												<input type="text" placeholder="姓名" id="name">
+											</div>
+										</div>
+										<div class="password-input">
+											<span class="glyphicon glyphicon-phone ut-font18"></span>
+											<div class="ut-inline-block input-border">
+												<input type="text" placeholder="手机号" id="phone">
+											</div>
+										</div>
+
+										<div>
+											<div class='btn-group-outer text-center'>
+												<button class="ut-btn btn-3 submit-password ut-mar-r20" id="addDesignerBtn">提交</button>
+												<button class="ut-btn btn-3 submit-password" id="cancelDesignerBtn">取消</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--main e-->
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/upload.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../tx-login/js/account.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/config.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../../lib/jquery.pagination.min.js"></script>
+		<script type="text/javascript" src="../../lib/laydate/laydate.js"></script>
+		<script src="js/designer.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>
